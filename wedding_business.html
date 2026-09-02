@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding&amp;Business</title>
+
+    <link rel="stylesheet" href="./font/offers-font.css">
+    <link rel="stylesheet" href="./css/offers-common.css">
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/wedding_business.css">
+    <link rel="stylesheet" href="./css/footer.css">
+</head>
+
+<body>
+     <header class="site-header">
+        <div class="header-bar">
+            <div class="header-inner">
+
+                <!-- header-left -->
+                <div class="header-left">
+                    <a href="./index.html" class="header-logo"><img src="./images/logo/black.png" alt="Haevichi">
+                    </a>
+
+                    <!-- 수정 후 -->
+                    <nav class="main-nav" id="mobile-navigation" aria-label="주요 메뉴">
+                        <ul class="main-menu">
+
+                            <li class="main-menu-item">            
+                                <a href="./offers.html" class="desktop-main-menu-link">스페셜 오퍼</a>
+
+                                <button type="button" class="mobile-submenu-toggle" aria-expanded="false"
+                                    aria-controls="offers-submenu">
+                                    <span>스페셜 오퍼</span>
+                                    <span class="mobile-submenu-chevron" aria-hidden="true"></span>
+                                </button>
+
+                                <div class="mega-menu offers-mega-menu" id="offers-submenu">
+                                    <ul class="mega-menu-list">
+                                        <li class="mega-menu-group">
+                                            <a href="./offers.html#package" class="mega-menu-title">패키지</a>
+                                        </li>
+                                        <li class="mega-menu-group">
+                                            <a href="./offers.html#dining" class="mega-menu-title">다이닝</a>
+                                        </li>
+                                        <li class="mega-menu-group">
+                                            <a href="./offers.html#event" class="mega-menu-title">이벤트</a>
+                                        </li>
+                                        <li class="mega-menu-group">
+                                            <a href="./offers.html#wellness" class="mega-menu-title">웰니스</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+
+                            <li class="main-menu-item">
+                                <a href="./hoteloverview.html" class="desktop-main-menu-link">호텔</a>
+
+                                <button type="button" class="mobile-submenu-toggle" aria-expanded="false"
+                                    aria-controls="hotel-submenu">
+                                    <span>호텔</span>
+                                    <span class="mobile-submenu-chevron" aria-hidden="true"></span>
+                                </button>
+
+                                <div class="mega-menu hotel-mega-menu" id="hotel-submenu">
+                                    <ul class="mega-menu-list">
+                                        <li class="mega-menu-group">
+                                            <a href="#" class="mega-menu-title">스탠다드</a>
+                                            <ul class="mega-submenu">
+                                                <li><a href="#">수페리어</a></li>
+                                                <li><a href="#">디럭스</a></li>
+                                                <li><a href="#">이그제큐티브</a></li>
+                                                <li><a href="#">온돌</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="mega-menu-group">
+                                            <a href="#" class="mega-menu-title">스위트</a>
+                                            <ul class="mega-submenu">
+                                                <li><a href="#">오션 스위트</a></li>
+                                                <li><a href="#">패밀리 스위트</a></li>
+                                                <li><a href="#">킹 스위트</a></li>
+                                                <li><a href="#">온돌 스위트</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="mega-menu-group">
+                                            <a href="#" class="mega-menu-title">프리미엄 스위트</a>
+                                            <ul class="mega-submenu">
+                                                <li><a href="#">해비치/로얄 스위트</a></li>
+                                                <li><a href="#">프레지덴셜 스위트</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="mega-menu-group">
+                                            <a href="#" class="mega-menu-title">특별객실</a>
+                                            <ul class="mega-submenu">
+                                                <li><a href="#">아니스지 스페이스</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+
+                            <li class="main-menu-item">
+                                <a href="./resortoverview.html" class="desktop-main-menu-link">리조트</a>
+
+                                <button type="button" class="mobile-submenu-toggle" aria-expanded="false"
+                                    aria-controls="resort-submenu">
+                                    <span>리조트</span>
+                                    <span class="mobile-submenu-chevron" aria-hidden="true"></span>
+                                </button>
+
+                                <div class="mega-menu resort-mega-menu" id="resort-submenu">
+                                    <ul class="mega-menu-list">
+                                        <li class="mega-menu-group">
+                                            <a href="#" class="mega-menu-title">스위트</a>
+                                            <ul class="mega-submenu">
+                                                <li><a href="#">주니어 스위트</a></li>
+                                                <li><a href="#">오션 스위트</a></li>
+                                                <li><a href="#">팜 스위트</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="mega-menu-group">
+                                            <a href="#" class="mega-menu-title">프리미엄 스위트</a>
+                                            <ul class="mega-submenu">
+                                                <li><a href="#">주니어 스위트 테라스 </a></li>
+                                                <li><a href="#">클래식 스위트</a></li>
+                                                <li><a href="#">그랜드 스위트</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="mega-menu-group">
+                                            <a href="#" class="mega-menu-title">시그니처 스위트</a>
+                                            <ul class="mega-submenu">
+                                                <li><a href="#">시그니처 돌 스위트</a></li>
+                                                <li><a href="#">시그니처 바람 스위트</a></li>
+                                                <li><a href="#">시그니처 노을 스위트</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="mega-menu-group">
+                                            <a href="#" class="mega-menu-title">특별객실</a>
+                                            <ul class="mega-submenu">
+                                                <li><a href="#">마스터 스위트</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+
+                            <li class="main-menu-item">
+                                <a href="./dining.html" class="desktop-main-menu-link">다이닝</a>
+
+                                <button type="button" class="mobile-submenu-toggle" aria-expanded="false"
+                                    aria-controls="dining-submenu">
+                                    <span>다이닝</span>
+                                    <span class="mobile-submenu-chevron" aria-hidden="true"></span>
+                                </button>
+
+                                <div class="mega-menu dining-mega-menu" id="dining-submenu">
+                                    <ul class="mega-menu-list">
+                                        <li class="mega-menu-group">
+                                            <a href="#" class="mega-menu-title">레스토랑</a>
+                                            <ul class="mega-submenu">
+                                                <li><a href="#">밀리우</a></li>
+                                                <li><a href="#">메르 &amp; 테르</a></li>
+                                                <li><a href="#">섬모라</a></li>
+                                                <li><a href="#">이디</a></li>
+                                                <li><a href="#">하노루</a></li>
+                                                <li><a href="#">다랑쉬</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="mega-menu-group">
+                                            <a href="#" class="mega-menu-title">바</a>
+                                            <ul class="mega-submenu">
+                                                <li><a href="#">바99</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="mega-menu-group">
+                                            <a href="#" class="mega-menu-title">베이커리</a>
+                                            <ul class="mega-submenu">
+                                                <li><a href="#">마고</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+
+                            <li class="main-menu-item">
+                                <a href="./wedding_business.html" class="desktop-main-menu-link">연회</a>
+
+
+                                <button type="button" class="mobile-submenu-toggle" aria-expanded="false"
+                                    aria-controls="wedding-business-submenu">
+                                    <span>연회</span>
+                                    <span class="mobile-submenu-chevron" aria-hidden="true"></span>
+                                </button>
+
+
+                                <div class="mega-menu wedding-business-mega-menu" id="wedding-business-submenu">
+                                    <ul class="mega-menu-list">
+                                        <li class="mega-menu-group">
+                                            <a href="#" class="mega-menu-title">웨딩</a>
+                                            <ul class="mega-submenu">
+                                                <li><a href="#">실내 웨딩</a></li>
+                                                <li><a href="#">실외 웨딩</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="mega-menu-group">
+                                            <a href="#" class="mega-menu-title">비즈니스</a>
+                                            <ul class="mega-submenu">
+                                                <li><a href="#">그랜드볼룸</a></li>
+                                                <li><a href="#">크리스탈홀</a></li>
+                                                <li><a href="#">다이아몬드홀</a></li>
+                                                <li><a href="#">소규모 미팅</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="mega-menu-group">
+                                            <a href="#" class="mega-menu-title">케이터링</a>
+                                            <ul class="mega-submenu">
+                                                <li><a href="#">케이터링 서비스</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+
+                            <li class="main-menu-item">
+                                <a href="./facility.html" class="desktop-main-menu-link">부대시설</a>
+
+                                <button type="button" class="mobile-submenu-toggle" aria-expanded="false"
+                                    aria-controls="facility-submenu">
+                                    <span>부대시설</span>
+                                    <span class="mobile-submenu-chevron" aria-hidden="true"></span>
+                                </button>
+
+
+                                <div class="mega-menu facility-mega-menu" id="facility-submenu">
+                                    <ul class="mega-menu-list">
+                                        <li class="mega-menu-group">
+                                            <a href="#" class="mega-menu-title">스파&amp;피트니스</a>
+                                            <ul class="mega-submenu">
+                                                <li><a href="#">트윈 풀 (실내)</a></li>
+                                                <li><a href="#">트윈 풀 (야외)</a></li>
+                                                <li><a href="#">더 써드 풀 (야외)</a></li>
+                                                <li><a href="#">사우나</a></li>
+                                                <li><a href="#">스파</a></li>
+                                                <li><a href="#">피트니스센터</a></li>
+                                                <li><a href="#">테니스코트</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="mega-menu-group">
+                                            <a href="#" class="mega-menu-title">편의시설</a>
+                                            <ul class="mega-submenu">
+                                                <li><a href="#">마리</a></li>
+                                                <li><a href="#">비즈니스 센터</a></li>
+                                                <li><a href="#">편의점</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="mega-menu-group">
+                                            <a href="#" class="mega-menu-title">키즈시설</a>
+                                            <ul class="mega-submenu">
+                                                <li><a href="#">놀멍</a></li>
+                                                <li><a href="#">엔터테인먼트 존</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="mega-menu-group">
+                                            <a href="#" class="mega-menu-title">갤러리</a>
+                                            <ul class="mega-submenu">
+                                                <li><a href="#">갤러리존</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+
+                            <li class="main-menu-item main-menu-item--direct">
+                                <a href="./membership.html">멤버십</a>
+                            </li>
+
+                        </ul>
+
+                        <!-- 모바일 사용자 메뉴 -->
+                        <ul class="mobile-utility-menu" aria-label="사용자 메뉴">
+                            <li>
+                                <a href="#">
+                                    <img src="./images/icon/person.svg" alt="">
+                                    <span>로그인</span>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#">
+                                    <img src="./images/icon/calendar.svg" alt="">
+                                    <span>마이페이지</span>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="#">
+                                    <img src="./images/icon/calendar.svg" alt="">
+                                    <span>예약조회</span>
+                                </a>
+                            </li>
+                        </ul>
+
+
+                    </nav>
+                </div>
+
+                <!-- header-right -->
+                <div class="header-right">
+                    <nav class="utility-nav" aria-label="사용자 메뉴">
+                        <ul class="utility-menu">
+                            <li><a href="#">로그인</a></li>
+                            <li><a href="#">마이페이지</a></li>
+                            <li><a href="#">예약조회</a></li>
+                        </ul>
+                    </nav>
+
+                    <div class="language-selector">
+                        <!-- popvoertarget : 어떤 메뉴 제어할지 지정 -->
+                        <!-- popovertargetaction : 그 메뉴를 어떻게 열고 닫을지 지정 -->
+                        <!-- popovertargetaction="toggle" : popover 클릭할 때마다 열기/닫기 가능하게 -->
+                        <button type="button" class="language-button" aria-label="언어 선택" popovertarget="language-menu"
+                            popovertargetaction="toggle">
+                            <span class="current-language">KR</span>
+                            <span class="language-chevron" aria-hidden="true"></span>
+                        </button>
+
+                        <ul class="language-menu" id="language-menu" popover>
+                            <li>
+                                <!-- popovertargetaction="hide" : 옵션 클릭 후 드롭다운 닫게 만들기  -->
+                                <button type="button" class="language-option" popovertarget="language-menu"
+                                    popovertargetaction="hide">
+                                    KR
+                                </button>
+                            </li>
+
+                            <li>
+                                <button type="button" class="language-option" popovertarget="language-menu"
+                                    popovertargetaction="hide">
+                                    EN
+                                </button>
+                            </li>
+                        </ul>
+
+                    </div>
+
+                    <a href="#" class="reservation-button">예약하기</a>
+
+                    <button type="button" class="mobile-menu-button" aria-label="전체 메뉴 열기"
+                        aria-controls="mobile-navigation" aria-expanded="false">
+                        <img src="./images/icon/menu.svg" alt="" class="mobile-menu-icon mobile-menu-open-icon">
+
+                        <img src="./images/icon/close.svg" alt="" class="mobile-menu-icon mobile-menu-close-icon">
+                    </button>
+
+                </div>
+
+            </div>
+        </div>
+
+        <!-- 모바일 메뉴 바깥 배경 -->
+        <button type="button" class="mobile-menu-backdrop" aria-label="메뉴 닫기" tabindex="-1">
+
+        </button>
+
+    </header>
+
+
+    <!-- main -->
+    <main>
+
+        <!-- hero -->
+        <section class="wedding-business-hero">
+            <img src="./images/weddingnbusiness_section/weddingnbusiness_main.jpg" alt="야외 웨딩 연회장 전경">
+            <h1>WEDDING &amp; BUSINESS</h1>
+        </section>
+
+
+        <!-- Wedding -->
+        <section class="content-section wedding-section">
+            <div class="content-container">
+
+                <div class="section-heading">
+                    <h2>Wedding</h2>
+                    <p>야외 잔디 정원, 수영장 등 야외 공간을 활용한 맞춤 연회를 제공합니다.</p>
+                </div>
+
+
+                <ul class="wedding-list">
+
+                    <!-- Wedding 01 : 실내 웨딩 -->
+                    <li class="wedding-item" id="indoor-wedding">
+
+                        <img src="./images/weddingnbusiness_section/wedding1.jpg" alt="실내 웨딩 공간 이미지">
+
+                        <div class="wedding-item-content">
+                            <h3>실내 웨딩</h3>
+
+                            <p>제주의 아름다운 자연을 배경으로, 해비치 최대 규모의 연회장에서 특별하고 품격 있는 웨딩을 경험해보세요.
+                            </p>
+
+                            <a href="#" class="more-link">
+                                자세히 보기
+                                <img class="more-link-icon" src="./images/icon/arrow_pri.svg" alt="">
+                            </a>
+                        </div>
+
+                    </li>
+
+
+                    <!-- Wedding 02 : 실외 웨딩 -->
+                    <li class="wedding-item" id="outdoor-wedding">
+
+                        <img src="./images/weddingnbusiness_section/wedding2.jpg" alt="실외 웨딩 공간 이미지">
+
+                        <div class="wedding-item-content">
+                            <h3>실외 웨딩</h3>
+
+                            <p>푸른 바다와 야자수가 펼쳐진 이국적인 제주에서, 사랑하는 사람과 평생을 함께할 특별한 약속을 나눠보세요.
+                            </p>
+
+                            <a href="#" class="more-link">
+                                자세히 보기
+                                <img class="more-link-icon" src="./images/icon/arrow_pri.svg" alt="">
+                            </a>
+                        </div>
+
+                    </li>
+
+                </ul>
+
+            </div>
+        </section>
+
+
+        <!-- Business -->
+        <section class="content-section business-section">
+            <div class="content-container">
+
+                <div class="section-heading">
+                    <h2>Business</h2>
+                    <p>다양한 공간과 모던한 인테리어, 국내외 행사로 다져진 해비치만의 세심한 서비스로 성공적인 연회를 약속합니다.
+                    </p>
+                </div>
+
+
+                <ul class="business-list">
+
+                    <!-- Business Card 01 -->
+                    <li class="business-card" id="grand-ballroom">
+                        <img src="./images/weddingnbusiness_section/business1.jpg" alt="그랜드볼룸 이미지">
+                        <h3>그랜드볼룸</h3>
+
+                        <p>제주 단일 호텔 연회장 중 가장 큰 규모로 1,000명 이상 수용 및 연회장 분할이 가능합니다.
+                        </p>
+
+                        <a href="#" class="more-link">
+                            자세히 보기
+                            <img class="more-link-icon" src="./images/icon/arrow_pri.svg" alt="">
+                        </a>
+                    </li>
+
+                    <!-- Business Card 02 -->
+                    <li class="business-card" id="crystal-hall">
+                        <img src="./images/weddingnbusiness_section/business2.jpg" alt="크리스탈홀 이미지">
+                        <h3>크리스탈홀</h3>
+
+                        <p>호텔과 리조트 중간의 지하 1층에 위치한 편리한 동선과 함께 약 440명 까지 좌석 배치가 가능한 연회장입니다.
+                        </p>
+
+                        <a href="#" class="more-link">
+                            자세히 보기
+                            <img class="more-link-icon" src="./images/icon/arrow_pri.svg" alt="">
+                        </a>
+                    </li>
+
+                    <!-- Business Card 03 -->
+                    <li class="business-card" id="diamond-hall">
+                        <img src="./images/weddingnbusiness_section/business3.jpg" alt="다이아몬드홀 이미지">
+                        <h3>다이아몬드홀</h3>
+
+                        <p>약 264명의 좌석 배치와 2개의 연회장으로 분할이 가능합니다.
+                        </p>
+
+                        <a href="#" class="more-link">
+                            자세히 보기
+                            <img class="more-link-icon" src="./images/icon/arrow_pri.svg" alt="">
+                        </a>
+                    </li>
+
+                    <!-- Business Card 04 -->
+                    <li class="business-card" id="small-meeting">
+                        <img src="./images/weddingnbusiness_section/business4.jpg" alt="소규모 미팅 공간 이미지">
+                        <h3>소규모 미팅</h3>
+
+                        <p>약 10명의 좌석 배치가 가능하며 소규모 회의나 미팅에 적합합니다.
+                        </p>
+
+                        <a href="#" class="more-link">
+                            자세히 보기
+                            <img class="more-link-icon" src="./images/icon/arrow_pri.svg" alt="">
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+        </section>
+
+
+        <!-- Catering -->
+        <section class="content-section catering-section" id="catering-service">
+            <div class="content-container">
+
+                <div class="section-heading">
+                    <h2>Catering</h2>
+                    <p>야외 잔디 정원, 수영장 등 야외 공간을 활용한 맞춤 연회를 제공합니다.</p>
+                </div>
+
+                <div class="catering-content">
+
+                    <div class="catering-images">
+                        <img src="./images/weddingnbusiness_section/catering1.jpg" alt="케이터링 테이블 세팅 이미지">
+                        <img src="./images/weddingnbusiness_section/catering2.jpg" alt="야외 케이터링 테이블 이미지">
+                    </div>
+
+                    <p class="catering-description">
+                        섬모라 야외 정원, 리조트 야외 정원, 선큰가든, 야외 수영장 주변 등에서 즐기는 한식, 양식, 일식 등
+                        다양한 요리와 뷔페, 코스, 단품 요리 등 다양한 음식을 준비하고 있으며 특별히 원하는 요리가 있다면 쉐프와 상담 후 맞춤으로 마련해 드립니다.
+                    </p>
+
+                    <a href="#" class="more-link">
+                        자세히 보기
+                        <img class="more-link-icon" src="./images/icon/arrow_pri.svg" alt="">
+                    </a>
+
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+    <!-- footer -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+
+            <div class="footer-top">
+                <a href="#" class="footer-logo">
+                    <img src="./images/logo/white.png" alt="해비치">
+                </a>
+                <nav class="footer-nav" aria-label="푸터 메뉴">
+                    <ul class="footer-menu">
+                        <li><a href="#">해비치소개</a></li>
+                        <li><a href="#">고객센터</a></li>
+                        <li><a href="#">오시는 길</a></li>
+                        <li><a href="#">해비치약관</a></li>
+                        <li><a href="#">개인정보처리방침</a></li>
+                        <li><a href="#">이메일무단수집금지</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- Contact + Company Info -->
+            <div class="footer-info-row">
+                <address class="footer-contact">
+
+                    <!-- 장식용 아이콘이므로 대체 텍스트를 비움 -->
+                    <!-- | 디자인용 구분자를 접근성을 고려해 사용하면 스크린리더가 읽지 않음 -->
+                    <p>
+                        <img src="./images/icon/location_wh.svg" alt="">
+                        <a href="#">제주특별자치도 서귀포시 성산읍 해비치로 136</a>
+                    </p>
+
+                    <p>
+                        <img src="./images/icon/phone_wh.svg" alt="">
+                        <a href="tel:0647808000">064-780-8000</a>
+                        <span aria-hidden="true">|</span>
+                        <span>예약</span>
+                        <a href="tel:15881234">1588-1234</a>
+                    </p>
+
+                    <p>
+                        <img src="./images/icon/envelope_wh.svg" alt="">
+                        <a href="mailto:info@haevichi.com">
+                            info@haevichi.com
+                        </a>
+                    </p>
+
+                </address>
+
+                <div class="footer-company-info">
+                    <p>해비치호텔앤드리조트 주식회사</p>
+                    <p>사업자등록번호 : 616-81-27929</p>
+                    <p>통신판매신고번호 : 제주남원 00040호 대표이사 황규석</p>
+                </div>
+
+            </div>
+
+            <!-- Certification + SNS -->
+            <div class="footer-bottom-row">
+                <div class="footer-cert">
+
+                    <div class="cert-item">
+                        <img src="./images/footer/ks_sqi.jpg" alt="">
+                        <p><span>한국 서비스 품질 지수</span>
+                            <span>(KS-SQI) 수상</span>
+                        </p>
+                    </div>
+
+                    <div class="cert-item">
+                        <img src="./images/footer/greenkey.jpg" alt="">
+                        <p>
+                            <span>국제 친환경 인증 프로그램</span>
+                            <span>그린 키 (Green Key) 획득</span>
+                        </p>
+                    </div>
+
+                </div>
+
+                <nav class="sns" aria-label="소셜 미디어">
+                    <ul class="sns-list">
+                        <!-- target="_blank" 새 창 만들때 사용하는 보안코드 -->
+                        <li>
+                            <a href="#" target="_blank" rel="noopener noreferrer">
+                                <img src="./images/icon/insta_wh.svg" alt="인스타그램">
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#" target="_blank" rel="noopener noreferrer">
+                                <img src="./images/icon/facebook_wh.svg" alt="페이스북">
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#" target="_blank" rel="noopener noreferrer">
+                                <img src="./images/icon/youtube_wh.svg" alt="유튜브">
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+            </div>
+
+            <p class="footer-copyright">
+                COPYRIGHT 2018 Haevichi hotels &amp; resorts Co. LTD. All Right Reserved
+            </p>
+
+        </div>
+    </footer>
+
+    <script>
+        const menuButton = document.querySelector(".mobile-menu-button");
+        const mobileNavigation = document.querySelector("#mobile-navigation");
+        const submenuButtons = document.querySelectorAll(".mobile-submenu-toggle");
+        const mobileMenuBackdrop = document.querySelector(".mobile-menu-backdrop");
+        const desktopMedia = window.matchMedia("(min-width: 1280px)");
+
+        /* 열려 있는 모든 서브메뉴 닫기 */
+        function closeAllSubmenus() {
+            submenuButtons.forEach(function (button) {
+                const menuItem = button.closest(".main-menu-item");
+
+                button.setAttribute("aria-expanded", "false");
+                menuItem.classList.remove("is-expanded");
+            });
+        }
+
+        /* 전체 모바일 메뉴 열기·닫기 */
+        function setMobileMenu(open) {
+            mobileNavigation.classList.toggle("is-open", open);
+            document.body.classList.toggle("menu-open", open);
+
+            menuButton.setAttribute("aria-expanded", String(open));
+            menuButton.setAttribute(
+                "aria-label",
+                open ? "전체 메뉴 닫기" : "전체 메뉴 열기"
+            );
+
+            /* 전체 메뉴를 닫으면 열려 있던 서브메뉴도 초기화 */
+            if (!open) {
+                closeAllSubmenus();
+            }
+        }
+
+        /* 햄버거·닫기 버튼 */
+        menuButton.addEventListener("click", function () {
+            const isOpen = mobileNavigation.classList.contains("is-open");
+
+            setMobileMenu(!isOpen);
+        });
+
+        /* 메뉴 바깥 배경을 클릭하면 전체 메뉴 닫기 */
+        mobileMenuBackdrop.addEventListener("click", function () {
+            setMobileMenu(false);
+        });
+
+        /* 메인메뉴 아코디언 */
+        submenuButtons.forEach(function (button) {
+            button.addEventListener("click", function () {
+                const menuItem = button.closest(".main-menu-item");
+                const isExpanded =
+                    button.getAttribute("aria-expanded") === "true";
+
+                /* 먼저 다른 서브메뉴를 모두 닫음 */
+                closeAllSubmenus();
+
+                /* 클릭한 메뉴가 닫혀 있었을 때만 열기 */
+                if (!isExpanded) {
+                    button.setAttribute("aria-expanded", "true");
+                    menuItem.classList.add("is-expanded");
+                }
+            });
+        });
+
+        /* Escape 키로 전체 메뉴 닫기 */
+        document.addEventListener("keydown", function (event) {
+            const isMenuOpen =
+                mobileNavigation.classList.contains("is-open");
+
+            if (event.key === "Escape" && isMenuOpen) {
+                setMobileMenu(false);
+                menuButton.focus();
+            }
+        });
+
+        /* 데스크톱 화면으로 전환되면 모바일 메뉴 초기화 */
+        desktopMedia.addEventListener("change", function (event) {
+            if (event.matches) {
+                setMobileMenu(false);
+            }
+        });
+    </script>
+
+</body>
+
+</html>

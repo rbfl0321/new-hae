@@ -1,0 +1,100 @@
+/* 변수 선언하기 */
+:root {
+    /* color */
+    --Primary-color: #1A5FA1;
+    --Primary-Hover-color: #13578F;
+    --Primary-Pressed-color: #104876;
+    --Primary-Subtle-color: #DCECF8;
+
+    --Neutral-100: #f2f2f2;
+    --Neutral-200: #e5e5e5;
+    --Neutral-300: #d4d4d4;
+    --Neutral-400: #a3a3a3;
+    --Neutral-500: #737373;
+    --Neutral-600: #525252;
+    --Neutral-700: #404040;
+    --Neutral-800: #262626;
+    --Neutral-900: #171717;
+
+    /* layout */
+    --inner-width: 1440px;
+
+}
+
+/* reset */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-width: 320px;
+    color: var(--Neutral-900);
+    font-family: 'Pretendard', sans-serif;
+}
+
+h1,
+h2,
+h3,
+p {
+    margin: 0;
+}
+
+img,
+video {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* li단독보다는 li를 감싸는 ul,ol를 초기화하는 방식을 추천 */
+ul,
+ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    padding: 0;
+    border: 0;
+    background: none;
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+}
+
+em,
+i,
+address {
+    font-style: normal;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+    /* 아직 적용된 요소 없음 */
+}

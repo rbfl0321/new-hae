@@ -1,0 +1,287 @@
+/* 회사 정보 */
+.footer-company-info {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    text-align: right;
+
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    color: #fff;
+}
+
+.footer-info-row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+/* sns 위치 */
+.footer-bottom-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* footer 배경*/
+.site-footer {
+    width: 100%;
+    padding: 48px 0 20px;
+    background: #404040;
+    color: #fff;
+}
+
+/* footer inner 위치 */
+.footer-inner {
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 41px;
+}
+
+/* footer 로고를 기준으로 위치 변경*/
+.footer-top {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+
+/* footer logo */
+.footer-logo {
+    display: block;
+    width: 154px;
+}
+
+.footer-logo img {
+    width: 154px;
+    height: 32px;
+}
+
+
+/* footer menu */
+.footer-menu {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+}
+
+.footer-menu a {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+    color: #fff;
+    white-space: nowrap;
+    transition: opacity 0.2s ease;
+}
+
+.footer-menu a:hover {
+    opacity: 0.6;
+}
+
+
+/* footer contact */
+
+.footer-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    color: #fff;
+}
+
+.footer-contact p {
+    display: flex;
+    align-items: center;
+}
+/* contact와 icon의 간격 */
+.footer-contact img {
+    margin-right: 12px;
+}
+
+.footer-cert {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 63px;
+}
+
+.cert-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.cert-item>p {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+.sns-list {
+    display: flex;
+    gap: 6px;
+}
+
+.sns-list a:hover {
+    opacity: 0.6;
+}
+
+/* copyright */
+.footer-copyright {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 20px;
+    color: #fff;
+}
+
+
+/* =========================
+   footer 반응형
+========================= */
+
+/* 태블릿 */
+@media screen and (max-width: 1279px) {
+
+    .footer-inner {
+        padding: 0 1.5em;
+    }
+
+    .footer-info-row {
+        gap: 2em;
+    }
+
+    .footer-company-info {
+        font-size: 13px;
+    }
+
+    .footer-menu {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+}
+
+
+/* 모바일 */
+@media screen and (max-width: 767px) {
+
+    .site-footer {
+        height: auto;
+        padding: 40px 0 20px;
+    }
+
+    .footer-inner {
+        gap: 30px;
+        padding: 0 20px;
+    }
+
+    /* footer 메뉴 */
+    .footer-menu {
+        flex-wrap: wrap;
+        gap: 12px 20px;
+    }
+
+    .footer-menu a {
+        font-size: 14px;
+    }
+
+    /* 연락처 + 회사정보 */
+    .footer-info-row {
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .footer-company-info {
+        text-align: left;
+        font-size: 12px;
+        line-height: 18px;
+        gap: 6px;
+    }
+
+    .footer-contact {
+        font-size: 12px;
+    }
+
+    /* 인증 + SNS */
+    .footer-bottom-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 24px;
+    }
+
+    .footer-cert {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    .sns-list {
+        gap: 10px;
+    }
+
+    /* copyright */
+    .footer-copyright {
+        font-size: 10px;
+        line-height: 16px;
+    }
+
+}
+
+
+/* 작은 모바일 */
+@media screen and (max-width: 480px) {
+
+    .footer-logo {
+        width: 120px;
+    }
+
+    .footer-logo img {
+        width: 120px;
+        height: auto;
+    }
+
+    .footer-menu {
+        column-gap: 14px;
+        row-gap: 10px;
+    }
+
+    .footer-menu a {
+        font-size: 12px;
+    }
+
+    .footer-contact {
+        font-size: 11px;
+    }
+
+    .footer-contact p {
+        align-items: flex-start;
+    }
+
+    .footer-contact img {
+        width: 16px;
+        margin-right: 8px;
+    }
+
+    .footer-company-info {
+        font-size: 11px;
+    }
+
+    .cert-item {
+        font-size: 10px;
+    }
+
+    .cert-item img {
+        width: 50px;
+    }
+
+    .footer-copyright {
+        font-size: 9px;
+    }
+
+}

@@ -1,0 +1,495 @@
+:root {
+    /* color */
+    --Primary-color: #1A5FA1;
+    --Primary-Hover-color: #13578F;
+    --Primary-Pressed-color: #104876;
+    --Primary-Subtle-color: #DCECF8;
+
+    --Neutral-100: #f2f2f2;
+    --Neutral-200: #e5e5e5;
+    --Neutral-300: #d4d4d4;
+    --Neutral-400: #a3a3a3;
+    --Neutral-500: #737373;
+    --Neutral-600: #525252;
+    --Neutral-700: #404040;
+    --Neutral-800: #262626;
+    --Neutral-900: #171717;
+}
+
+.content-section {
+    margin-top: 200px;
+}
+
+.content-container {
+    width: min(1440px, calc(100% - 80px));
+    margin: 0 auto;
+}
+
+.catering-section {
+    margin-bottom: 200px;
+}
+
+.section-heading {
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+
+    margin-bottom: 34px;
+}
+
+.section-heading>p {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.01em;
+    color: var(--Neutral-900);
+}
+
+/* typo */
+.section-heading h2 {
+    font-family: 'Minion Pro', serif;
+    font-size: 54px;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 0.01em;
+    color: var(--Neutral-900);
+}
+
+.wedding-item h3,
+.business-card h3 {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 0.01em;
+    color: var(--Neutral-900);
+}
+
+.wedding-item-content>p,
+.business-card>p,
+.catering-description {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.01em;
+    color: var(--Neutral-900);
+}
+
+/* main */
+.wedding-business-hero {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    overflow: hidden;
+}
+
+.wedding-business-hero>img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.wedding-business-hero h1 {
+    position: absolute;
+    top: calc(50% + 44px);
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    font-family: 'Minion Pro', serif;
+    font-size: 70px;
+    font-weight: 800;
+    line-height: normal;
+    letter-spacing: 0.01em;
+    color: var(--Neutral-100);
+
+    white-space: nowrap;
+}
+
+/* wedding */
+.wedding-list {
+    display: flex;
+    flex-direction: column;
+    gap: 34px;
+}
+
+.wedding-item {
+    width: 100%;
+
+    display: grid;
+
+    /* 기존 1074 : 342 비율 유지 */
+    grid-template-columns: minmax(0, 3.14fr) minmax(0, 1fr);
+
+    column-gap: 24px;
+}
+
+.wedding-item>img {
+    width: 100%;
+    height: auto;
+
+    aspect-ratio: 1074 / 492;
+    object-fit: cover;
+}
+
+.wedding-item-content h3 {
+    margin-bottom: 16px;
+}
+
+.wedding-item-content>p {
+    margin-bottom: 28px;
+}
+
+.wedding-item-content {
+    align-self: end;
+}
+
+/* business */
+.business-card {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.business-card>img {
+    width: 100%;
+    height: auto;
+
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+
+    margin-bottom: 24px;
+}
+
+.business-card h3 {
+    margin: 0 0 8px;
+
+    font-size: 24px;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 0.01em;
+    color: var(--Neutral-900);
+}
+
+.business-card>p {
+    margin: 0px;
+
+    min-height: calc(2lh + 38px);
+
+    font-size: 16px;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.01em;
+    color: var(--Neutral-900);
+}
+
+.business-list {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    column-gap: 24px;
+}
+
+/* catering */
+.catering-images {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 24px;
+}
+
+.catering-images img {
+    width: 100%;
+    height: auto;
+
+    aspect-ratio: 708 / 368;
+    object-fit: cover;
+}
+
+.catering-description {
+    width: min(824px, 100%);
+    margin-top: 26px;
+}
+
+.catering-content>.more-link {
+    margin-top: 38px;
+}
+
+.more-link {
+    width: 146px;
+    height: 38px;
+    padding: 6px 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    border: 1px solid var(--Primary-color);
+
+    font-size: 14px;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 0;
+    color: var(--Primary-color);
+}
+
+.more-link-icon {
+    flex-shrink: 0;
+    transition: transform 0.2s ease;
+}
+
+.more-link:hover .more-link-icon,
+.more-link:focus-visible .more-link-icon {
+    transform: translateX(4px);
+}
+
+/* tablet */
+@media screen and (max-width: 1279px) {
+
+    .content-container {
+        width: calc(100% - 60px);
+    }
+
+    .wedding-business-hero {
+        height: 500px;
+    }
+
+    .wedding-business-hero {
+        height: 500px;
+    }
+
+    .wedding-business-hero h1 {
+        top: calc(50% + 30px);
+        font-size: 54px;
+    }
+
+
+    .content-section {
+        margin-top: 145px;
+    }
+
+    .catering-section {
+        margin-bottom: 145px;
+    }
+
+    .section-heading h2 {
+        font-size: 42px;
+    }
+
+    .wedding-item {
+        column-gap: 20px;
+    }
+
+    .business-list {
+        column-gap: 20px;
+    }
+
+    .catering-images {
+        column-gap: 20px;
+    }
+}
+
+/* mobile */
+@media screen and (max-width: 767px) {
+
+    .wedding-business-hero+.content-section {
+        margin-top: 50px;
+    }
+
+    .content-container {
+        width: calc(100% - 40px);
+    }
+
+    .wedding-business-hero {
+        height: 200px;
+    }
+
+    .wedding-business-hero h1 {
+        top: calc(50% + 25px);
+        font-size: 48px;
+    }
+
+    .content-section {
+        margin-top: 115px;
+    }
+
+    .catering-section {
+        margin-bottom: 115px;
+    }
+
+    .section-heading h2 {
+        font-size: 32px;
+    }
+
+    .section-heading>p {
+        font-size: 16px;
+    }
+
+    .wedding-item {
+        grid-template-columns: minmax(0, 3.14fr) minmax(0, 1fr);
+
+        column-gap: 16px;
+    }
+
+    .wedding-item h3 {
+        margin-bottom: 8px;
+
+        font-size: 18px;
+    }
+
+    .wedding-item-content>p {
+        margin-bottom: 16px;
+
+        font-size: 13px;
+    }
+
+    .wedding-item .more-link {
+        width: 100%;
+        max-width: 146px;
+
+        padding-left: 6px;
+        padding-right: 6px;
+
+        gap: 6px;
+        font-size: 13px;
+    }
+
+    .business-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        column-gap: 16px;
+        row-gap: 48px;
+    }
+
+    .business-card>img {
+        margin-bottom: 18px;
+    }
+
+    .business-card h3 {
+        font-size: 20px;
+    }
+
+    .business-card>p {
+        font-size: 14px;
+    }
+
+    .catering-images {
+        grid-template-columns: 1fr;
+    }
+
+    .catering-images img:nth-child(2) {
+        display: none;
+    }
+
+    .catering-description {
+        width: 100%;
+        margin-top: 26px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+
+    .content-container {
+        width: calc(100% - 32px);
+    }
+
+    .wedding-business-hero h1 {
+        font-size: clamp(28px, calc(16px + 3.333vw), 32px);
+    }
+
+    .content-section {
+        margin-top: 85px;
+    }
+
+    .section-heading h2 {
+        font-size: clamp(24px, calc(12px + 3.333vw), 28px);
+    }
+
+    .section-heading>p {
+        font-size: 14px;
+    }
+
+    .wedding-item {
+        grid-template-columns: minmax(0, 1fr) 104px;
+        column-gap: 12px;
+    }
+
+    .wedding-list {
+        gap: 28px;
+    }
+
+    .wedding-item h3 {
+        font-size: 16px;
+    }
+
+    .business-list {
+        column-gap: 12px;
+        row-gap: 40px;
+    }
+
+    .business-card>img {
+        margin-bottom: 16px;
+    }
+
+    .business-card h3 {
+        margin-bottom: 6px;
+
+        font-size: 18px;
+    }
+
+    .business-card>p {
+        font-size: 13px;
+    }
+
+    .catering-section {
+        margin-bottom: 85px;
+    }
+
+    .catering-description {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+
+    /* wedding */
+    .wedding-item-content {
+        align-self: end;
+
+        display: flex;
+        flex-direction: column;
+    }
+
+    .wedding-item-content h3 {
+        margin-bottom: 8px;
+    }
+
+    .wedding-item-content>p {
+        margin-bottom: 10px;
+
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        line-clamp: 2;
+
+        overflow: hidden;
+
+        font-size: 11px;
+        line-height: 1.4;
+    }
+
+    .wedding-item .more-link {
+        width: 100%;
+        height: 32px;
+
+        margin-top: 0;
+
+        padding: 4px;
+        gap: 4px;
+
+        font-size: 11px;
+    }
+
+    .wedding-item .more-link-icon {
+        width: 13px;
+        height: 13px;
+    }
+}

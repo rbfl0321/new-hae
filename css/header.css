@@ -1,0 +1,869 @@
+/* 변수 선언하기 */
+:root {
+    /* color */
+    --Primary-color: #1A5FA1;
+    --Primary-Hover-color: #13578F;
+    --Primary-Pressed-color: #104876;
+    --Primary-Subtle-color: #DCECF8;
+
+    --Neutral-100: #fff;
+    --Neutral-200: #e5e5e5;
+    --Neutral-300: #d4d4d4;
+    --Neutral-400: #a3a3a3;
+    --Neutral-500: #737373;
+    --Neutral-600: #525252;
+    --Neutral-700: #404040;
+    --Neutral-800: #262626;
+    --Neutral-900: #171717;
+
+    /* layout */
+    --inner-width: 1440px;
+
+}
+
+/* pc 에서 숨기기 */
+.mobile-header {
+    display: none;
+}
+
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 88px;
+    background: var(--Neutral-100);
+    z-index: 1000;
+}
+
+.header-bar {
+    position: relative;
+    width: 100%;
+    height: 88px;
+
+    display: flex;
+    align-items: center;
+
+    border-bottom: 0.5px solid transparent;
+}
+
+/* 호버시 헤더 하단 구분선 */
+.site-header:has(.main-menu-item:hover > .mega-menu) .header-bar,
+.site-header:has(.main-menu-item:focus-within > .mega-menu) .header-bar {
+    border-bottom-color: var(--Neutral-400);
+}
+
+.header-inner {
+    box-sizing: border-box;
+
+    width: calc(100% - 160px);
+    max-width: 1760px;
+    height: 52px;
+    margin: 0 auto;
+    padding: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 48px;
+}
+
+.header-logo {
+    display: block;
+    flex-shrink: 0;
+}
+
+.header-logo img {
+    width: 154px;
+    height: 32px;
+}
+
+/* main-nav */
+.main-nav {
+    height: 88px;
+}
+
+.main-menu {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.main-menu-item {
+    height: 100%;
+}
+
+.main-menu-item:hover>.mega-menu,
+.main-menu-item:focus-within>.mega-menu {
+    display: block;
+}
+
+.main-menu-item>a {
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 0;
+    color: var(--Neutral-900);
+    white-space: nowrap;
+}
+
+.main-menu-item:hover>a,
+.main-menu-item:focus-within>a {
+    font-weight: 700;
+    color: var(--Neutral-400);
+}
+
+.mega-menu {
+    position: absolute;
+    top: 88px;
+    left: 0;
+
+    width: 100%;
+    min-height: 68px;
+    height: auto;
+
+    padding-top: 30px;
+    padding-left: max(282px,
+            calc((100% - 1760px) / 2 + 202px));
+    padding-right: 0;
+    padding-bottom: 30px;
+
+    background: var(--Neutral-100);
+    z-index: 1001;
+
+    display: none;
+}
+
+.mega-menu-list {
+    display: flex;
+    align-items: flex-start;
+    gap: 21px;
+}
+
+.mega-menu-group {
+    width: 150px;
+    flex-shrink: 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 19px;
+}
+
+.mega-menu-title {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 16.5px;
+    letter-spacing: 0;
+    color: var(--Neutral-900);
+    white-space: nowrap;
+}
+
+.mega-menu-title:hover,
+.mega-menu-title:focus-visible {
+    color: var(--Neutral-400);
+}
+
+.mega-submenu {
+    display: flex;
+    flex-direction: column;
+    gap: 19px;
+}
+
+.mega-submenu a {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16.5px;
+    letter-spacing: 0;
+    color: #a3a3a3;
+    white-space: nowrap;
+}
+
+.mega-submenu a:hover,
+.mega-submenu a:focus-visible {
+    color: var(--Neutral-800);
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+.utility-menu {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.utility-menu a {
+    display: flex;
+    align-items: center;
+
+    padding: 8px;
+
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 18px;
+    letter-spacing: 0;
+    color: var(--Neutral-900);
+    white-space: nowrap;
+}
+
+.utility-menu a:hover,
+.utility-menu a:focus-visible {
+    font-weight: 600;
+    color: var(--Neutral-400);
+}
+
+.language-selector {
+    position: relative;
+    width: 76px;
+    height: 36px;
+    margin-left: 16px;
+}
+
+.language-button {
+    width: 76px;
+    height: 36px;
+    padding: 8px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+
+    cursor: pointer;
+
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 18px;
+    letter-spacing: 0.01em;
+    color: var(--Neutral-900);
+
+    anchor-name: --language-trigger;
+}
+
+.language-chevron {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+
+    background-image: url("../images/icon/chev_down_bk.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+/* dropdown */
+.language-menu {
+    position: fixed;
+    position-anchor: --language-trigger;
+
+    /* popover 기본 위치값 */
+    inset: auto;
+    margin: 0;
+
+    /* language-button 기준으로 위치 지정 */
+    top: anchor(bottom);
+    left: anchor(left);
+    right: auto;
+    bottom: auto;
+
+    width: 76px;
+    height: 52px;
+
+    padding: 0;
+
+    background: var(--Neutral-100);
+    border: 0;
+    outline: 1px solid var(--Neutral-300);
+
+    overflow: hidden;
+}
+
+/* KR / EN 영역 */
+.language-menu li {
+    width: 100%;
+    height: 26px;
+}
+
+.language-option {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--Neutral-100);
+    color: var(--Neutral-900);
+
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 18px;
+    letter-spacing: 0.01em;
+
+    cursor: pointer;
+}
+
+/* option hover */
+.language-option:hover,
+.language-option:focus-visible {
+    background: var(--Primary-color);
+    color: var(--Neutral-100);
+}
+
+/* language selected */
+/* language-menu열려있지 않을 때만,
+language-button에 호버 했을 때만 글자색 회색으로, chevrone아이콘도 동일하게*/
+.language-selector:not(:has(.language-menu:popover-open)) .language-button:hover {
+    color: var(--Neutral-400);
+}
+
+.language-selector:not(:has(.language-menu:popover-open)) .language-button:hover .language-chevron {
+    background-image: url("../images/icon/chev_down_gr.svg");
+}
+
+.language-selector:has(.language-menu:popover-open) .language-button {
+    color: var(--Neutral-900);
+}
+
+.language-selector:has(.language-menu:popover-open) .language-chevron {
+    background-image: url("../images/icon/chev_up_bk.svg");
+}
+
+.reservation-button {
+    width: 200px;
+    height: 50px;
+    margin-left: 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--Primary-color);
+    color: var(--Neutral-100);
+
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 20px;
+    letter-spacing: 0;
+    white-space: nowrap;
+}
+
+.reservation-button:hover,
+.reservation-button:focus-visible {
+    background: var(--Primary-Hover-color);
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+    /* 아직 적용된 요소 없음 */
+}
+
+/* 데스크톱에서 햄버거 버튼 숨김 */
+.mobile-menu-button {
+    display: none;
+}
+
+.mobile-submenu-toggle,
+.mobile-utility-menu,
+.mobile-menu-close-icon {
+    display: none;
+}
+
+.mobile-menu-backdrop {
+    display: none;
+}
+
+/* 메뉴가 열리면 햄버거 아이콘 숨김 */
+.mobile-menu-button[aria-expanded="true"] .mobile-menu-open-icon {
+    display: none;
+}
+
+/* 메뉴가 열리면 닫기 아이콘 표시 */
+.mobile-menu-button[aria-expanded="true"] .mobile-menu-close-icon {
+    display: block;
+}
+
+body.menu-open {
+    overflow: hidden;
+}
+
+
+/* narrow desktop */
+@media screen and (min-width: 1280px) and (max-width: 1440px) {
+
+    .header-inner {
+        width: calc(100% - 80px);
+    }
+
+    .header-left {
+        gap: 24px;
+    }
+
+    .mega-menu {
+        padding-left: 218px;
+    }
+
+    .main-menu {
+        gap: 16px;
+    }
+
+    .main-menu-item>a {
+        font-size: 16px;
+    }
+
+    .utility-menu {
+        gap: 0;
+    }
+
+    .utility-menu a {
+        padding: 4px;
+    }
+
+    .language-selector {
+        margin-left: 8px;
+    }
+
+    .reservation-button {
+        width: 160px;
+        height: 48px;
+        margin-left: 8px;
+
+        font-size: 18px;
+    }
+}
+
+
+
+/* tablet */
+@media screen and (max-width: 1279px) {
+
+    .site-header {
+        height: 60px;
+    }
+
+    .header-bar {
+        width: 100%;
+        height: 60px;
+        border-bottom: 0;
+    }
+
+    .header-inner {
+
+        width: 100%;
+        max-width: none;
+        height: 100%;
+
+        margin: 0;
+        padding-inline: 32px;
+    }
+
+    .header-logo img {
+        width: 120px;
+        height: auto;
+    }
+
+    .utility-nav,
+    .language-selector {
+        display: none;
+    }
+
+    /* 예약 버튼과 햄버거 버튼 영역 */
+    .header-right {
+        display: flex;
+        align-items: center;
+        flex-shrink: 0;
+        gap: 20px;
+    }
+
+    .reservation-button {
+        width: 180px;
+        height: 46px;
+        margin-left: 0;
+
+        font-size: 16px;
+        font-weight: 600;
+    }
+
+    .mobile-menu-button {
+        width: 44px;
+        height: 44px;
+        padding: 0;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: 0 0 44px;
+
+        background: transparent;
+        border: 0;
+        cursor: pointer;
+    }
+
+    .mobile-menu-icon {
+        width: 28px;
+        height: 28px;
+        object-fit: contain;
+    }
+
+    /* 기존 데스크톱 내비게이션을 모바일 메뉴로 전환 */
+    .main-nav {
+        box-sizing: border-box;
+
+        position: fixed;
+        top: 60px;
+        right: 0;
+
+        width: min(560px, 100%);
+        height: calc(100dvh - 60px);
+        padding: 24px 32px 32px;
+
+        display: flex;
+        flex-direction: column;
+
+        background: var(--Neutral-100);
+        overflow-y: auto;
+        overscroll-behavior: contain;
+
+        transform: translateX(100%);
+        visibility: hidden;
+        pointer-events: none;
+
+        transition:
+            transform 0.3s ease,
+            visibility 0.3s ease;
+
+        z-index: 999;
+    }
+
+    .main-nav.is-open {
+        transform: translateX(0);
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+    /* 모바일 메뉴 뒤의 반투명 배경 */
+    .mobile-menu-backdrop {
+        position: fixed;
+        top: 60px;
+        right: 0;
+        bottom: 0;
+        left: 0;
+
+        display: block;
+
+        background: rgb(0 0 0 / 35%);
+
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+
+        transition:
+            opacity 0.3s ease,
+            visibility 0.3s ease;
+
+        z-index: 998;
+    }
+
+    /* 전체 메뉴가 열렸을 때 백드롭 표시 */
+    body.menu-open .mobile-menu-backdrop {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+    .main-menu {
+        display: block;
+        height: auto;
+        flex-shrink: 0;
+    }
+
+    .main-menu-item {
+        height: auto;
+    }
+
+    /* 모바일에서는 데스크톱용 메인메뉴 링크 숨김 */
+    .main-menu-item>.desktop-main-menu-link {
+        display: none;
+    }
+
+    /* 모바일 메인메뉴 토글 버튼 */
+    .mobile-submenu-toggle {
+        width: 100%;
+        min-height: 64px;
+        padding: 20px 0;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        background: transparent;
+        border: 0;
+        border-bottom: 1px solid var(--Neutral-300);
+
+        font-family: inherit;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 24px;
+        color: var(--Neutral-900);
+
+        cursor: pointer;
+    }
+
+    /* 서브메뉴가 없는 멤버십 */
+    .main-menu-item--direct>a {
+        width: 100%;
+        height: auto;
+        min-height: 64px;
+        padding: 20px 0;
+
+        display: flex;
+        align-items: center;
+
+        border-bottom: 1px solid var(--Neutral-300);
+
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 24px;
+        color: var(--Neutral-900);
+    }
+
+    /* 메인메뉴 오른쪽 화살표 */
+    .mobile-submenu-chevron {
+        width: 8px;
+        height: 8px;
+        margin-right: 4px;
+        flex-shrink: 0;
+
+        border-right: 1.5px solid var(--Neutral-900);
+        border-bottom: 1.5px solid var(--Neutral-900);
+
+        transform: rotate(45deg);
+        transition: transform 0.2s ease;
+    }
+
+    .mobile-submenu-toggle[aria-expanded="true"] .mobile-submenu-chevron {
+        transform: rotate(225deg);
+    }
+
+    /* 모바일에서는 hover로 서브메뉴가 열리지 않게 함 */
+    .main-menu-item:hover>.mega-menu,
+    .main-menu-item:focus-within>.mega-menu {
+        display: none;
+    }
+
+    /* JavaScript로 선택된 메뉴는 항상 표시 */
+    .main-menu-item.is-expanded>.mega-menu,
+    .main-menu-item.is-expanded:hover>.mega-menu,
+    .main-menu-item.is-expanded:focus-within>.mega-menu {
+        display: block;
+    }
+
+    /* 모바일 서브메뉴 */
+    .mega-menu {
+        box-sizing: border-box;
+        position: static;
+
+        width: 100%;
+        min-height: 0;
+        height: auto;
+        padding: 20px 24px;
+
+        background: var(--Neutral-100);
+        box-shadow: none;
+    }
+
+    .mega-menu-list {
+        display: block;
+    }
+
+    .mega-menu-group {
+        width: 100%;
+        margin-bottom: 24px;
+        gap: 12px;
+    }
+
+    .mega-menu-group:last-child {
+        margin-bottom: 0;
+    }
+
+    .mega-menu-title {
+        display: block;
+
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 24px;
+        color: var(--Neutral-900);
+        white-space: normal;
+    }
+
+    .mega-submenu {
+        gap: 12px;
+        padding-left: 20px;
+    }
+
+    .mega-submenu a {
+        font-size: 14px;
+        line-height: 22px;
+        white-space: normal;
+    }
+
+    /* 모바일 메뉴 하단 사용자 메뉴 */
+    .mobile-utility-menu {
+        margin-top: auto;
+        padding-top: 48px;
+        flex-shrink: 0;
+
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .mobile-utility-menu a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 20px;
+        color: var(--Neutral-900);
+        white-space: nowrap;
+    }
+
+    .mobile-utility-menu img {
+        width: 24px;
+        height: 24px;
+        flex-shrink: 0;
+    }
+}
+
+
+
+/* mobile */
+@media screen and (max-width: 767px) {
+
+    .site-header,
+    .header-bar {
+        height: 50px;
+    }
+
+    .header-inner {
+        padding-inline: 20px;
+    }
+
+    .reservation-button {
+        width: 80px;
+    }
+
+    .header-right {
+        gap: 16px;
+    }
+
+    .main-nav {
+        top: 50px;
+        height: calc(100dvh - 50px);
+        padding-inline: 20px;
+    }
+
+    .mobile-menu-backdrop {
+        top: 50px;
+    }
+
+    /* 모바일 메인메뉴 크기 */
+    .mobile-submenu-toggle,
+    .main-menu-item--direct>a {
+        min-height: 56px;
+        padding: 16px 0;
+
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    /* 모바일 서브메뉴 안쪽 여백 */
+    .mega-menu {
+        padding: 18px 20px;
+    }
+
+    /* 모바일 하단 사용자 메뉴 */
+    .mobile-utility-menu {
+        padding-top: 40px;
+    }
+
+    .mobile-utility-menu a {
+        gap: 6px;
+
+        font-size: 12px;
+        line-height: 18px;
+    }
+
+    .mobile-utility-menu img {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+
+
+/* small ver. mobile */
+@media screen and (max-width: 480px) {
+
+    .header-inner {
+        padding-inline: 16px;
+    }
+
+    .header-logo img {
+        width: clamp(84px, 25vw, 120px);
+        height: auto;
+    }
+
+    .reservation-button {
+        height: 44px;
+        flex-shrink: 0;
+        font-size: clamp(14px, calc(8px + 1.667vw), 16px);
+    }
+
+    .mobile-menu-button {
+        width: 44px;
+        height: 44px;
+        flex: 0 0 44px;
+    }
+
+    .mobile-menu-icon {
+        width: clamp(24px, calc(12px + 3.333vw), 28px);
+        height: auto;
+    }
+
+    .main-nav {
+        padding-inline: 16px;
+    }
+}
+
+
+
+
+
+
+

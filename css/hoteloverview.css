@@ -1,0 +1,452 @@
+/* 변수 선언하기 */
+:root {
+    /* color */
+    --Primary-color: #1A5FA1;
+    --Primary-Hover-color: #13578F;
+    --Primary-Pressed-color: #104876;
+    --Primary-Subtle-color: #DCECF8;
+
+    --Neutral-100: #fff;
+    --Neutral-200: #e5e5e5;
+    --Neutral-300: #d4d4d4;
+    --Neutral-400: #a3a3a3;
+    --Neutral-500: #737373;
+    --Neutral-600: #525252;
+    --Neutral-700: #404040;
+    --Neutral-800: #262626;
+    --Neutral-900: #171717;
+
+    /* layout */
+    --inner-width: 1440px;
+
+    /* spacing */
+    /* border */
+    /* transition */
+}
+
+
+body {
+    font-family: "Pretendard", sans-serif;
+    font-size: 16px;
+    color: #171717;
+}
+
+.inner {
+    max-width: var(--inner-width);
+    /* background-color: rgba(255, 0, 0, 0.1); */
+    margin: 0 auto;
+    padding: 0 1em;
+}
+
+
+.sub-visual {
+    position: relative;
+    height: 600px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sub-visual img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+}
+
+.sub-visual::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.25);
+    z-index: -1;
+}
+
+
+.sub-visual h1 {
+    font-family: "Minion Pro Bold Condensed", serif;
+    font-size: 3.5em;
+    letter-spacing: 0.06em;
+    color: #fff;
+    text-transform: uppercase;
+    position: relative;
+    top: 30px;
+}
+
+
+
+.sub-visual .text-box {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.sub-visual .inner h2 {
+    color: #fff;
+    font-size: 42px;
+    letter-spacing: 4px;
+    font-family: "MinionPro", serif;
+}
+
+
+
+/* 객실 소개 공통 섹션 */
+.room-overview-wrap {
+    padding-top: 200px;
+}
+
+.room-overview-wrap .title-box {
+    margin-bottom: 40px;
+
+}
+
+.room-overview-wrap .title-box .section-title {
+    font-size: 48px;
+    font-weight: 500;
+    margin-bottom: 12px;
+    font-family: "Minion Pro", serif;
+}
+
+.room-overview-wrap .title-box p {
+    font-size: 18px;
+    color: var(--Neutral-900);
+}
+
+
+/* 객실 설명 */
+.room-overview-list li .text-box p {
+    font-size: 16px !important;
+    line-height: 1.6;
+    color: var(--Neutral-900);
+}
+
+
+.room-overview-wrap.suite-rooms,
+.room-overview-wrap.special-suite-room {
+     position: relative;
+    z-index: 0;
+}
+
+.room-overview-wrap.special-suite-room {
+    padding-bottom: 150px;
+}
+
+.room-overview-wrap.special-suite-room::before {
+    content: "";
+    position: absolute;
+    top: 100px;
+    bottom: 0;
+    left: 50%;
+    width: 100%;
+    transform: translateX(-50%);
+    background-color: #f3f6fa;
+    z-index: -1;
+}
+
+.room-overview-wrap.suite-rooms::before {
+    content: "";
+    position: absolute;
+    top: 100px;
+    bottom: -100px;
+    left: 50%;
+    width: 100%;
+    transform: translateX(-50%);
+    background-color: #f3f6fa;
+    z-index: -1;
+}
+
+
+/* 객실 리스트 */
+.room-overview-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 60px 40px;
+}
+
+.room-overview-list.one-col {
+    grid-template-columns: 1fr;
+    width: 100%;
+}
+
+.room-overview-list.one-col li {
+    width: 100%;
+}
+
+.room-overview-list.one-col li .img-box {
+    width: 100%;
+    aspect-ratio: 1424 / 378;
+    overflow: hidden;
+}
+
+.room-overview-list.one-col li .img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* 이미지 비율 수정 */
+.room-overview-list li .img-box {
+    width: 100%;
+    aspect-ratio: 692 / 378;
+    overflow: hidden;
+}
+
+.room-overview-list li .img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.room-overview-list li .text-box {
+    margin-top: 20px;
+}
+
+.room-overview-list li .text-box h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.room-overview-list li .text-box p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--Neutral-900);
+}
+
+.room-overview-list > li .img-box {
+    overflow: hidden;
+}
+
+.room-overview-list > li .img-box img {
+    width: 100%;
+    height: auto;
+    display: block;
+
+    transition: transform 0.6s ease;
+}
+
+.room-overview-list > li:hover .img-box img {
+    transform: scale(1.05);
+}
+
+
+
+/* 아이패드 */
+@media screen and (max-width: 1440px) {
+
+    /* header */
+
+    
+    body {
+        font-size: 14px;
+    }
+
+    .inner {
+        padding: 0 1em;
+    }
+    
+}
+
+
+/* 모바일 */
+@media screen and (max-width:767px) {
+
+    body {
+        font-size: 12px;
+    }
+
+
+    .title-box {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1em;
+        margin-bottom: 1em;
+    }
+
+    .title-box .section-title {
+        font-size: 2em;
+    }
+
+
+    .btn>a {
+        padding: 4px 0 4px 12px;
+    }
+
+
+    .main-slider-list>li .img-box {
+        height: 100%;
+    }
+
+    .main-slider-list>li .img-box>img {
+        height: 100%;
+        object-fit: cover;
+    }
+
+    
+
+ 
+    /* 전체 여백 */
+  .room-overview-wrap .inner {
+         padding: 0 1em;
+    }
+
+    
+
+
+/* 서브 비주얼 */
+.sub-visual {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.sub-visual > img {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 200px;
+
+    object-fit: cover;
+    display: block;
+}
+
+/* .sub-visual .inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 150px;
+
+    margin: 0;
+    padding: 0 20px;
+
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 2;
+} */
+
+.sub-visual .inner h1 { 
+    margin: 0; 
+    padding: 0; 
+    text-align: center; 
+    font-size: 32px; 
+    line-height: 1.2; 
+    letter-spacing: 0.04em; 
+    
+    position: relative;
+    top: 30px;
+}
+
+
+    /* 객실 섹션 */
+    .room-overview-wrap {
+        padding-top: 100px;
+    }
+
+
+    /* 섹션 제목 영역 */
+    .room-overview-wrap .title-box {
+        margin-bottom: 28px;
+    }
+
+    .room-overview-wrap .title-box .section-title {
+        font-size: 32px;
+        line-height: 1.2;
+        margin-bottom: 10px;
+    }
+
+    .room-overview-wrap .title-box p {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+
+    /* 객실 리스트 */
+    .room-overview-list {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+
+    /* 객실 이미지 */
+    .room-overview-list li .img-box {
+        width: 100%;
+        aspect-ratio: 692 / 378;
+    }
+
+
+    /* 객실 설명 */
+    .room-overview-list li .text-box {
+        margin-top: 16px;
+    }
+
+    .room-overview-list li .text-box h3 {
+        font-size: 18px;
+        line-height: 1.4;
+        margin-bottom: 8px;
+    }
+
+    .room-overview-list li .text-box p {
+        font-size: 14px !important;
+        line-height: 1.4;
+        letter-spacing: -0.02em;
+        font-weight: 500;
+    }
+
+
+    /* PC에서 강제로 넣은 줄바꿈 제거 */
+    .room-overview-list li .text-box p br,
+    .room-overview-wrap .title-box p br {
+        display: none;
+    }
+
+
+    /* Suite 배경 */
+    .room-overview-wrap.suite-rooms::before {
+        top: 60px;
+        bottom: -50px;
+    }
+
+
+    /* Special Suite */
+    .room-overview-wrap.special-suite-room {
+        padding-bottom: 80px;
+    }
+
+    .room-overview-wrap.special-suite-room::before {
+        top: 60px;
+    }
+
+
+    /* Special Suite 이미지 */
+    .room-overview-list.one-col li .img-box {
+        aspect-ratio: 692 / 378;
+    }
+}
+
+
+
+/* 작은 모바일 - 두 페이지 동일 적용 */
+@media screen and (max-width: 480px) {
+
+   
+}

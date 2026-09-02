@@ -1,0 +1,224 @@
+.sub-visual {
+    position: relative;
+    height: 600px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sub-visual img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+}
+.sub-visual::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.25);
+    z-index: -1;
+}
+
+.sub-visual .inner h1 {
+    transform: translateY(50px);
+}
+
+.sub-visual h1 {
+    font-family: "MinionPro", serif;
+    font-weight: 800;
+    font-size: 3.5em;
+    letter-spacing: 0.06em;
+    color: #fff;
+    text-transform: uppercase;
+    
+}
+body {
+    font-family: "Pretendard", sans-serif;
+    font-size: 16px;
+    color: #171717;
+}
+
+.inner {
+    max-width: var(--inner-width);
+    /* background-color: rgba(255, 0, 0, 0.1); */
+    margin: 0 auto;
+    padding: 0 2em;
+}
+
+.membership-detail-wrap{
+    padding-top: 50px;
+    padding-bottom:200px;
+}
+
+.membership-detail-wrap .title-box{
+    display:block;
+    margin-bottom:40px;
+}
+
+
+.membership-detail-wrap .title-box p{
+    font-size: 1.13em;
+    color:var(--Neutral-700);
+    line-height: 1.6;
+}
+
+.title-box .section-title {
+    font-family: "Minion Pro";
+    font-size: 3.38em;
+    font-weight: 600;
+    text-transform: uppercase;
+    /* margin: 0;
+    line-height: 1; */
+}
+
+.membership-detail-wrap .section-title{
+    font-size: 42px;
+    text-transform: capitalize;
+
+}
+
+.membership-list{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.membership-list li{
+    display: flex;
+    align-items: center;
+    gap: 56px;
+}
+
+.membership-list .img-box{
+    flex:0 0 480px;
+}
+
+.membership-list .img-box img{
+    width:100%;
+    display: block;
+}
+
+.membership-list .text-box{
+    flex:1;
+}
+
+.membership-list .brand{
+    font-size:0.81em;
+    letter-spacing: 0.05em;
+    color : var(--Neutral-500);
+    margin-bottom:8px;
+}
+
+.membership-list .h3{
+    font-size:1.5em;
+    font-weight: 600;
+    color : var(--Neutral-900);
+    margin-bottom: 16px;
+}
+
+.membership-list .detail{
+    color : var(--Neutral-700);
+    line-height: 1.6;
+}
+
+.price-wrap{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top:32px;
+    padding-top:24px;
+    border-top:1px solid var(--Neutral-200);
+}
+
+.price-wrap .price strong{
+    font-size : 1.33em;
+    font-weight: 600;
+    margin-left : 4px;
+}
+
+.btn>a {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid var(--Primary-color);
+    color: var(--Primary-color);
+    padding: 8px 20px;
+    transition: 0.3s;
+}
+
+.btn-blue>a {
+    color: var(--Neutral-900);
+    border-color: var(--Primary-color);
+}
+
+@media (max-width:1279px){
+    body{
+        font-size:14px;
+    }
+    .sub-visual{
+        height: 360px;
+    }
+
+    .membership-detail-wrap{
+        margin-top: 50px;
+        padding-bottom: 120px;
+    }
+
+    .membership-list > li{
+        gap:40px;
+    }
+
+    .membership-list .img-box{
+        flex:0 0 360px;
+    }
+
+}
+
+@media(max-width:1023px){
+    body{
+        font-size:14px;
+    }    
+    .sub-visual{
+        height: 240px;
+    }
+
+    .membership-list li{
+    container-type: inline-size;   
+    }
+
+    .membership-list>li{
+        flex-direction: column;
+        align-items: stretch;
+        gap:16px;
+    }
+    .membership-list .img-box{
+        width: 100%;
+        flex: 0 0 auto;
+    }
+    .membership-list .h3{
+        font-size:1.1em;
+        margin-bottom: 8px;
+    }
+    .membership-list .detail{
+        font-size: 0.85em;
+    }
+    .price-wrap{
+        margin-top: clamp(12px, 3cqw, 32px);
+        padding-top: clamp(12px,2.5cqw, 24px);
+    }
+    .price-wrap .price strong{
+        font-size: 1.1em;
+    }
+
+}
+
+@media(max-width:767px){
+    body{
+        font-size:12px;
+    }
+ 
+}

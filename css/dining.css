@@ -1,0 +1,1158 @@
+/* 변수 선언하기 */
+:root {
+    /* color */
+    --Primary-color: #1A5FA1;
+    --Primary-Hover-color: #13578F;
+    --Primary-Pressed-color: #104876;
+    --Primary-Subtle-color: #DCECF8;
+
+    --Neutral-100: #fff;
+    --Neutral-200: #e5e5e5;
+    --Neutral-300: #d4d4d4;
+    --Neutral-400: #a3a3a3;
+    --Neutral-500: #737373;
+    --Neutral-600: #525252;
+    --Neutral-700: #404040;
+    --Neutral-800: #262626;
+    --Neutral-900: #171717;
+
+    /* layout */
+    --inner-width: 1440px;
+}
+
+
+/* ==================================================
+   기본
+================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+li {
+    list-style: none;
+}
+
+body {
+    font-family: "Pretendard", sans-serif;
+    font-size: 16px;
+    color: #171717;
+}
+
+.inner {
+    max-width: var(--inner-width);
+    margin: 0 auto;
+    padding: 0 2em;
+}
+
+
+/* ==================================================
+   SUB VISUAL
+================================================== */
+
+.sub-visual {
+    position: relative;
+    height: 600px;
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sub-visual img {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    z-index: -2;
+}
+
+.sub-visual::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.25);
+
+    z-index: -1;
+}
+
+.sub-visual h1 {
+    font-family: "Minion Pro Bold Condensed", serif;
+    font-size: 3.5em;
+    letter-spacing: 0.06em;
+    color: #fff;
+    text-transform: uppercase;
+
+    position: relative;
+    top: 30px;
+}
+
+.sub-visual .inner h2 {
+    color: #fff;
+    font-size: 42px;
+    letter-spacing: 4px;
+    font-family: "MinionPro", serif;
+}
+
+.sub-visual .text-box {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* ==================================================
+   DINING
+================================================== */
+
+.dining-wrap {
+    padding-top: 200px;
+}
+
+.dining-wrap .title-box {
+    margin-bottom: 40px;
+}
+
+.dining-wrap .title-box .section-title {
+    font-size: 48px;
+    font-weight: 600;
+    margin-bottom: 12px;
+
+    font-family: "Minion Pro", serif;
+}
+
+.dining-wrap .title-box p {
+    font-size: 16px;
+    color: var(--Neutral-900);
+    line-height: 1.6;
+}
+
+
+/* ==================================================
+   DINING LIST
+================================================== */
+
+.dining-list {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+
+    padding-bottom: 0;
+}
+
+
+/* Bakery & Bar 시작 전 */
+
+.bakery-bar-wrap {
+    padding-top: 200px;
+}
+
+
+/* Bakery & Bar와 Footer 사이 */
+
+.bakery-bar-wrap .dining-list {
+    padding-bottom: 200px;
+}
+
+
+/* ==================================================
+   CARD
+================================================== */
+
+.dining-list > li {
+    width: 100%;
+    height: 290px;
+
+    display: flex;
+
+    overflow: hidden;
+    position: relative;
+}
+
+
+/* ==================================================
+   DIM
+================================================== */
+
+.dining-list > li::before {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    width: 50%;
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.8);
+
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(8px);
+
+    z-index: 2;
+}
+
+
+/* 다랑쉬 / 하노루 */
+
+.dining-list > li:nth-child(5)::before,
+.dining-list > li:nth-child(6)::before {
+    width: 100%;
+}
+
+
+/* 다랑쉬 / 하노루 텍스트 */
+
+.dining-list > li:nth-child(5) .text-box,
+.dining-list > li:nth-child(6) .text-box {
+    color: var(--Neutral-300);
+}
+
+
+/* 다랑쉬 / 하노루 이미지 확대 없음 */
+
+.dining-list > li:nth-child(5):hover .img-box img,
+.dining-list > li:nth-child(6):hover .img-box img {
+    transform: none;
+}
+
+
+/* ==================================================
+   IMAGE
+================================================== */
+
+.dining-list > li .img-box {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.dining-list > li .img-box img {
+    width: 100%;
+    height: auto;
+
+    display: block;
+
+    transition: transform 0.6s ease;
+}
+
+.dining-list > li:hover .img-box img {
+    transform: scale(1.03);
+}
+
+
+/* ==================================================
+   TEXT BOX
+================================================== */
+
+.dining-list > li .text-box {
+    position: absolute;
+
+    top: 0;
+    right: 0;
+
+    width: 50%;
+    height: 100%;
+
+    padding: 40px 50px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    color: #fff;
+
+    z-index: 3;
+}
+
+
+/* category */
+
+.dining-list > li .text-box .category {
+    display: flex;
+    gap: 12px;
+
+    margin-bottom: 18px;
+}
+
+.dining-list > li .text-box .category span {
+    font-size: 12px;
+    line-height: 1;
+
+    padding: 5px 10px;
+
+    border: 1px solid;
+}
+
+
+/* title */
+
+.dining-list > li .text-box h3 {
+    font-size: 26px;
+    font-weight: 600;
+
+    margin-bottom: 14px;
+}
+
+
+/* description */
+
+.dining-list > li .text-box p {
+    font-size: 16px;
+    font-weight: 300;
+
+    line-height: 1.7;
+}
+
+
+/* ==================================================
+   1440px 이하
+   작은 PC / 태블릿 시작
+================================================== */
+
+@media screen and (max-width: 1440px) {
+
+    body {
+        font-size: 14px;
+    }
+
+    .inner {
+        padding: 0 30px;
+    }
+
+    .dining-list > li .img-box img {
+        width: 100%;
+        height: 100%;
+
+        display: block;
+
+        object-fit: cover;
+    }
+
+}
+
+
+/* ==================================================
+   1279px 이하
+   태블릿
+================================================== */
+
+@media screen and (max-width: 1279px) {
+
+    .inner {
+        padding: 0 30px;
+    }
+
+
+    /* SUB VISUAL */
+
+    .sub-visual {
+        height: 450px;
+    }
+
+    .sub-visual h1 {
+        font-size: 3em;
+    }
+
+    .sub-visual .inner h2 {
+        font-size: 36px;
+    }
+
+
+    /* DINING */
+
+    .dining-wrap {
+        padding-top: 140px;
+    }
+
+    .dining-wrap .title-box {
+        margin-bottom: 30px;
+    }
+
+    .dining-wrap .title-box .section-title {
+        font-size: 42px;
+    }
+
+    .dining-wrap .title-box p {
+        font-size: 15px;
+    }
+
+
+    /* LIST */
+
+    .dining-list {
+        gap: 40px;
+    }
+
+
+    /* CARD */
+
+    .dining-list > li {
+        height: 260px;
+    }
+
+
+    /* IMAGE */
+
+    .dining-list > li .img-box img {
+        width: 100%;
+        height: 100%;
+
+        object-fit: cover;
+        object-position: center center;
+    }
+
+
+    /* TEXT */
+
+    .dining-list > li .text-box {
+        padding: 30px 35px;
+    }
+
+    .dining-list > li .text-box .category {
+        gap: 10px;
+        margin-bottom: 14px;
+    }
+
+    .dining-list > li .text-box .category span {
+        font-size: 11px;
+        padding: 5px 9px;
+    }
+
+    .dining-list > li .text-box h3 {
+        font-size: 23px;
+        margin-bottom: 10px;
+    }
+
+    .dining-list > li .text-box p {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+
+    /* BAKERY */
+
+    .bakery-bar-wrap {
+        padding-top: 140px;
+    }
+
+    .bakery-bar-wrap .dining-list {
+        padding-bottom: 140px;
+    }
+
+}
+
+
+/* ==================================================
+   1023px 이하
+   작은 태블릿
+================================================== */
+
+@media screen and (max-width: 1023px) {
+
+    .inner {
+        padding: 0 25px;
+    }
+
+
+    /* SUB VISUAL */
+
+    .sub-visual {
+        height: 380px;
+    }
+
+    .sub-visual h1 {
+        font-size: 2.7em;
+    }
+
+    .sub-visual .inner h2 {
+        font-size: 32px;
+        letter-spacing: 3px;
+    }
+
+
+    /* DINING */
+
+    .dining-wrap {
+        padding-top: 110px;
+    }
+
+    .dining-wrap .title-box {
+        margin-bottom: 25px;
+    }
+
+    .dining-wrap .title-box .section-title {
+        font-size: 38px;
+    }
+
+
+    /* LIST */
+
+    .dining-list {
+        gap: 30px;
+    }
+
+    .dining-list > li {
+        height: 230px;
+    }
+
+
+    /* TEXT */
+
+    .dining-list > li .text-box {
+        padding: 25px 30px;
+    }
+
+    .dining-list > li .text-box h3 {
+        font-size: 21px;
+    }
+
+    .dining-list > li .text-box p {
+        font-size: 13px;
+    }
+
+
+    /* BAKERY */
+
+    .bakery-bar-wrap {
+        padding-top: 110px;
+    }
+
+    .bakery-bar-wrap .dining-list {
+        padding-bottom: 110px;
+    }
+
+}
+
+
+/* ==================================================
+   767px 이하
+   모바일 기본
+================================================== */
+
+@media screen and (max-width: 767px) {
+
+    body {
+        font-size: 12px;
+    }
+
+    .inner {
+        padding: 0 20px;
+    }
+
+
+    /* TITLE */
+
+    .title-box {
+        flex-direction: column;
+        align-items: flex-start;
+
+        gap: 1em;
+        margin-bottom: 1em;
+    }
+
+    .title-box .section-title {
+        font-size: 2em;
+    }
+
+
+    .btn > a {
+        padding: 4px 0 4px 12px;
+    }
+
+
+    /* ==================================================
+       SUB VISUAL
+    ================================================== */
+
+    .sub-visual {
+        width: 100%;
+        height: 200px;
+
+        overflow: hidden;
+    }
+
+    .sub-visual > img {
+        position: absolute;
+
+        top: 0;
+        left: 0;
+
+        width: 100%;
+        height: 200px;
+
+        object-fit: cover;
+        object-position: center center;
+
+        display: block;
+    }
+
+    .sub-visual .inner h1 {
+        margin: 0;
+        padding: 0;
+
+        text-align: center;
+
+        font-size: 32px;
+        line-height: 1.2;
+        letter-spacing: 0.04em;
+
+        position: relative;
+        top: 30px;
+    }
+
+
+    /* ==================================================
+       DINING
+    ================================================== */
+
+    .dining-wrap {
+        padding: 100px 0;
+    }
+
+    .dining-wrap .title-box .section-title {
+        font-size: 32px;
+        font-weight: 500;
+    }
+
+
+    /* ==================================================
+       BAKERY
+    ================================================== */
+
+    .bakery-bar-wrap {
+        padding-top: 60px;
+    }
+
+    .bakery-bar-wrap .dining-list {
+        padding-bottom: 50px;
+    }
+
+
+    /* ==================================================
+       LIST
+    ================================================== */
+
+    .dining-list {
+        gap: 20px;
+    }
+
+
+    /* ==================================================
+       CARD
+    ================================================== */
+
+    .dining-list > li {
+        width: 100%;
+        max-width: 460px;
+
+        height: auto;
+
+        aspect-ratio: 20 / 10;
+
+        position: relative;
+        overflow: hidden;
+    }
+
+
+    /* ==================================================
+       IMAGE
+    ================================================== */
+
+    .dining-list > li .img-box {
+        position: absolute;
+
+        inset: 0;
+
+        width: 100%;
+        height: 100%;
+    }
+
+    .dining-list > li .img-box img {
+        width: 100%;
+        height: 100%;
+
+        object-fit: cover;
+        object-position: center center;
+
+        transform: none;
+    }
+
+
+    .dining-list > li:hover .img-box img {
+        transform: none;
+    }
+
+
+    /* ==================================================
+       DIM
+    ================================================== */
+
+    .dining-list > li::before {
+        width: 100%;
+        height: 100%;
+
+        background: rgba(0, 0, 0, 0.5);
+
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+
+        z-index: 2;
+    }
+
+    .dining-list > li:nth-child(5)::before,
+    .dining-list > li:nth-child(6)::before {
+        background: rgba(0, 0, 0, 0.8);
+    }
+
+
+    /* ==================================================
+       TEXT
+    ================================================== */
+
+    .dining-list > li .text-box {
+        position: absolute;
+
+        left: 0;
+        right: 0;
+        bottom: 0;
+
+        width: 100%;
+        height: auto;
+
+        padding: 20px;
+
+        z-index: 3;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+
+        color: #fff;
+    }
+
+
+    .dining-list > li .text-box .category {
+        margin-bottom: 8px;
+        gap: 8px;
+    }
+
+    .dining-list > li .text-box .category span {
+        font-size: 11px;
+        padding: 4px 8px;
+    }
+
+    .dining-list > li .text-box h3 {
+        font-size: 22px;
+        margin-bottom: 8px;
+    }
+
+    .dining-list > li .text-box p {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+}
+
+
+/* ==================================================
+   491px ~ 767px
+   ⭐ 태블릿 → 모바일 전환 구간
+================================================== */
+
+@media screen and (min-width: 491px) and (max-width: 767px) {
+
+    /* ------------------------------------------
+       전체 여백
+    ------------------------------------------ */
+
+    .inner {
+        padding: 0 24px;
+    }
+
+
+    /* ------------------------------------------
+       SUB VISUAL
+    ------------------------------------------ */
+
+    .sub-visual {
+        height: 240px;
+    }
+
+    .sub-visual > img {
+        width: 100%;
+        height: 100%;
+
+        object-fit: cover;
+        object-position: center center;
+    }
+
+    .sub-visual .inner h1 {
+        font-size: 30px;
+        top: 20px;
+    }
+
+
+    /* ------------------------------------------
+       DINING TITLE
+    ------------------------------------------ */
+
+    .dining-wrap {
+        padding-top: 90px;
+        padding-bottom: 90px;
+    }
+
+    .dining-wrap .title-box {
+        margin-bottom: 30px;
+    }
+
+    .dining-wrap .title-box .section-title {
+        font-size: 34px;
+        margin-bottom: 10px;
+    }
+
+    .dining-wrap .title-box p {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+
+    /* ------------------------------------------
+       LIST
+    ------------------------------------------ */
+
+    .dining-list {
+        gap: 25px;
+    }
+
+
+    /* ------------------------------------------
+       CARD
+       491~767에서 고정 240px 대신
+       화면 크기에 따라 자연스럽게 변화
+    ------------------------------------------ */
+
+    .dining-list > li {
+        width: 100%;
+        max-width: none;
+
+        height: clamp(220px, 34vw, 250px);
+
+        aspect-ratio: auto;
+
+        position: relative;
+        overflow: hidden;
+    }
+
+
+    /* ------------------------------------------
+       IMAGE
+    ------------------------------------------ */
+
+    .dining-list > li .img-box {
+        position: absolute;
+
+        inset: 0;
+
+        width: 100%;
+        height: 100%;
+
+        overflow: hidden;
+    }
+
+    .dining-list > li .img-box img {
+        width: 100%;
+        height: 100%;
+
+        object-fit: cover;
+
+        /*
+            이미지가 오른쪽까지 꽉 차면서
+            가운데를 기준으로 자연스럽게 보이게
+        */
+        object-position: center center;
+
+        transform: none;
+    }
+
+
+    /* hover 확대 제거 */
+
+    .dining-list > li:hover .img-box img {
+        transform: none;
+    }
+
+
+    /* ------------------------------------------
+       DIM
+    ------------------------------------------ */
+
+    .dining-list > li::before {
+        width: 100%;
+        height: 100%;
+
+        background: rgba(0, 0, 0, 0.5);
+
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+
+        z-index: 2;
+    }
+
+
+    /* 다랑쉬 / 하노루 */
+
+    .dining-list > li:nth-child(5)::before,
+    .dining-list > li:nth-child(6)::before {
+        width: 100%;
+
+        background: rgba(0, 0, 0, 0.75);
+    }
+
+
+    /* ------------------------------------------
+       TEXT
+    ------------------------------------------ */
+
+    .dining-list > li .text-box {
+        position: absolute;
+
+        left: 0;
+        right: 0;
+        bottom: 0;
+
+        width: 100%;
+        height: auto;
+
+        padding: clamp(20px, 3vw, 25px)
+                 clamp(24px, 4vw, 30px);
+
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+
+        color: #fff;
+
+        z-index: 3;
+    }
+
+
+    /* category */
+
+    .dining-list > li .text-box .category {
+        gap: 8px;
+
+        margin-bottom: 9px;
+    }
+
+    .dining-list > li .text-box .category span {
+        font-size: 10px;
+
+        padding: 4px 8px;
+    }
+
+
+    /* title */
+
+    .dining-list > li .text-box h3 {
+        font-size: clamp(20px, 3vw, 22px);
+
+        margin-bottom: 8px;
+    }
+
+
+    /* description */
+
+    .dining-list > li .text-box p {
+        font-size: clamp(12px, 1.8vw, 13px);
+
+        line-height: 1.5;
+    }
+
+
+    /* ------------------------------------------
+       BAKERY & BAR
+    ------------------------------------------ */
+
+    .bakery-bar-wrap {
+        padding-top: 80px;
+    }
+
+    .bakery-bar-wrap .dining-list {
+        padding-bottom: 80px;
+    }
+
+}
+
+
+/* ==================================================
+   540px 이하
+   작은 모바일
+================================================== */
+
+@media screen and (max-width: 540px) {
+
+    .inner {
+        padding: 0 16px;
+    }
+
+
+    /* SUB VISUAL */
+
+    .sub-visual {
+        height: 180px;
+    }
+
+    .sub-visual > img {
+        height: 180px;
+    }
+
+    .sub-visual .inner h1 {
+        font-size: 28px;
+        top: 25px;
+    }
+
+
+    /* DINING */
+
+    .dining-wrap {
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+
+    .dining-wrap .title-box {
+        margin-bottom: 25px;
+    }
+
+    .dining-wrap .title-box .section-title {
+        font-size: 28px;
+    }
+
+    .dining-wrap .title-box p {
+        font-size: 13px;
+        line-height: 1.6;
+    }
+
+
+    /* BAKERY */
+
+    .bakery-bar-wrap {
+        padding-top: 40px;
+    }
+
+    .bakery-bar-wrap .dining-list {
+        padding-bottom: 40px;
+    }
+
+
+    /* LIST */
+
+    .dining-list {
+        gap: 16px;
+    }
+
+
+    /* CARD */
+
+    .dining-list > li {
+        max-width: none;
+
+        height: auto;
+
+        aspect-ratio: 16 / 10;
+    }
+
+
+    /* TEXT */
+
+    .dining-list > li .text-box {
+        padding: 16px;
+    }
+
+    .dining-list > li .text-box .category {
+        margin-bottom: 6px;
+        gap: 6px;
+    }
+
+    .dining-list > li .text-box .category span {
+        font-size: 10px;
+        padding: 4px 7px;
+    }
+
+    .dining-list > li .text-box h3 {
+        font-size: 19px;
+        margin-bottom: 6px;
+    }
+
+    .dining-list > li .text-box p {
+        font-size: 12px;
+        line-height: 1.45;
+    }
+
+}
+
+
+/* ==================================================
+   400px 이하
+   아주 작은 모바일
+================================================== */
+
+@media screen and (max-width: 400px) {
+
+    .inner {
+        padding: 0 14px;
+    }
+
+    .sub-visual {
+        height: 160px;
+    }
+
+    .sub-visual > img {
+        height: 160px;
+    }
+
+    .sub-visual .inner h1 {
+        font-size: 25px;
+    }
+
+
+    .dining-wrap {
+        padding: 70px 0;
+    }
+
+    .dining-wrap .title-box .section-title {
+        font-size: 26px;
+    }
+
+
+    .dining-list > li {
+        aspect-ratio: 16 / 10;
+    }
+
+
+    .dining-list > li .text-box {
+        padding: 14px;
+    }
+
+    .dining-list > li .text-box h3 {
+        font-size: 18px;
+    }
+
+    .dining-list > li .text-box p {
+        font-size: 11px;
+    }
+
+}

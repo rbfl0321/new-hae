@@ -1,0 +1,506 @@
+body {
+    font-family: "Pretendard", sans-serif;
+    font-size: 16px;
+    color: #171717;
+}
+
+.inner {
+    max-width: var(--inner-width);
+    /* background-color: rgba(255, 0, 0, 0.1); */
+    margin: 0 auto;
+    padding: 0 1em;
+}
+
+
+/* pc 에서 숨기기 */
+.ham-btn,
+.m-header,
+.m-gnb-list {
+    display: none;
+}
+
+
+/* main 공통영역 */
+section {
+    padding-top: 200px;
+}
+
+
+/* tab-menu */
+.tab-menu {
+    display: flex;
+    gap: 2em;
+    margin-bottom: 1.5em;
+}
+
+
+.tab-menu>li>a {
+    color: var(--Neutral-500);
+    font-weight: 300;
+    font-size: 1.13em;
+}
+
+.btn>a {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid var(--Primary-color);
+    color: var(--Primary-color);
+    padding: 8px 20px;
+    transition: 0.3s;
+}
+
+
+.btn>a::after {
+    content: "";
+    display: block;
+    width: 36px;
+    height: 24px;
+    background-image: url(../images/icon/arrow_pri.svg);
+    background-repeat: no-repeat;
+    transition: 0.3s;
+}
+
+
+.btn>a:hover::after {
+    background-position-x: 4px;
+}
+
+
+.btn-pri>a {
+    background: var(--Primary-color);
+    color: #fff;
+}
+
+
+.btn-pri>a::after {
+    background-image: url(../images/icon/arrow_wh.svg);
+}
+
+
+.btn-white>a {
+    color: #fff;
+    border-color: #fff;
+    background: rgba(255, 255, 255, 0);
+}
+
+
+.btn-white>a:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+
+.btn-white>a::after {
+    background-image: url(../images/icon/arrow_wh.svg);
+}
+
+.more-btn>a {
+    display: flex;
+    gap: 4px;
+
+}
+
+.more-btn>a::after {
+    content: "";
+    display: block;
+    width: 8px;
+    height: 19px;
+    background: url(../images/icon/arrow_pri.svg);
+}
+
+/* ============================================================
+   HERO (1920 x 600 / 헤더와 겹치는 시작점)
+============================================================ */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    overflow: hidden;
+    padding-top: 0;
+    /* ↑ 위쪽 공통 section { padding-top:200px } 규칙 무효화.
+       .hero 도 <section> 태그라서 안 넣으면 실제 높이가
+       600px + 200px = 800px 이 되어 중앙정렬이 어긋남 */
+}
+
+.hero img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero__bg {
+    position: absolute;
+    inset: 0;
+    background-color: var(--Neutral-800);
+    /* 이미지 로드 전 자리 */
+    background-image: url(../images/facility_section/facility_main.png);
+    background-size: cover;
+    background-position: center;
+}
+
+.hero__overlay {
+    position: absolute;
+    inset: 0;
+}
+
+/* 화면 크기와 무관하게 항상 정중앙을 유지하는 값 —
+   반응형에서 절대 건드리지 않습니다. */
+.hero__title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3.5em;
+    text-align: center;
+    white-space: nowrap;
+    color: var(--Neutral-100);
+    font-family: "Minion Pro";
+}
+
+
+/* ============================================================
+   FACILITY SECTIONS
+============================================================ */
+.facility-section:last-child {
+    padding-bottom: 200px;
+}
+
+.section-head {
+    text-align: left;
+    margin-bottom: 0;
+}
+
+
+.section-head__title {
+    font-size: 42px;
+    font-weight: 600;
+    margin: 0 0 12px;
+    font-family: "Minion Pro", serif;
+}
+
+.section-head__desc {
+    margin: 0;
+    font-family: "pretendard";
+    font-size: 1.13em;
+    line-height: 1.6;
+    color: var(--Neutral-900);
+}
+
+
+
+/* ---------- 이미지 그룹 ---------- */
+.image-group {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.image-row {
+    display: flex;
+    gap: 24px;
+}
+
+.img-box {
+    position: relative;
+    height: 392px;
+    background: var(--Neutral-100);
+    overflow: hidden;
+}
+
+.img-box--full {
+    width: 1440px;
+    max-width: 100%;
+}
+
+.img-box--half {
+    width: 710px;
+    max-width: 100%;
+    flex: 1 1 var(--img-width-half);
+}
+
+.img-box>img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero__title {
+    font-size: 2.5em;
+    position: absolute;
+    top: calc(50% + 35px);
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.facility-card__overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0 64px;
+    background: rgba(0, 0, 0, 0.55);
+    color: #fff;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.35s ease, visibility 0.35s ease;
+}
+
+.facility-card:hover .facility-card__overlay {
+    opacity: 1;
+    visibility: visible;
+}
+
+.facility-card__title {
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 18px;
+}
+
+.facility-card__desc {
+    max-width: 560px;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.facility-card__btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 20px;
+    padding: 8px 18px;
+    border: 1px solid #fff;
+    color: #fff;
+    font-size: 13px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.facility-card__btn:hover {
+    background: #fff;
+    color: var(--Neutral-900);
+}
+
+.facility-card__arrow {
+    transition: transform 0.2s ease;
+}
+
+.facility-card__btn:hover .facility-card__arrow {
+    transform: translateX(3px);
+}
+
+/* ============================================================
+   반응형 - 아이패드
+============================================================ */
+@media screen and (max-width:1279px) {
+    .hero {
+        height: 400px;
+    }
+
+    .hero__title {
+        font-size: 2.5em;
+        position: absolute;
+        top: calc(50% + 25px);
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    /* body {
+        font-size: 14px;
+    } */
+
+    .header-inner>div {
+        gap: 1em;
+    }
+
+    /* 제거하기 */
+    .gnb-list {
+        display: none;
+    }
+
+    #main-nav {
+        position: fixed;
+        right: -100%;
+        background: rgba(255, 255, 255, 0.8);
+        width: 100%;
+        height: 100vh;
+        top: 0;
+        padding: 1em 1.5em;
+    }
+
+    .main-menu {
+        display: block;
+    }
+
+    .main-menu>li>a {
+        padding: 1em 0;
+        border-bottom: 1px solid var(--Neutral-300);
+        color: var(--Neutral-900);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+    }
+
+    .main-menu>li>a::after {
+        content: '\e800';
+        font-family: "fontello";
+        font-size: 0.7em;
+    }
+
+    .main-menu>li:hover>a::after,
+    .main-menu>li:active>a::after {
+        content: "\e801";
+    }
+
+    .depth2 {
+        position: static;
+        display: none;
+        text-indent: 2.4em;
+
+    }
+
+    .depth2>li {
+        width: 100%;
+    }
+
+    .main-menu>li:hover .depth2 {
+        display: block;
+    }
+
+    .depth3 {
+        display: none;
+        text-indent: 4em;
+    }
+
+    /* 보여주기 */
+    .ham-btn {
+        display: block;
+        width: 32px;
+    }
+
+    .m-header,
+    .m-gnb-list {
+        display: flex;
+        justify-content: space-between;
+        color: var(--Neutral-900);
+    }
+
+    .m-header .m-logo img {
+        filter: invert();
+        width: 100px;
+    }
+
+    .close-btn .icon-x {
+        color: #000;
+        font-size: 2em;
+    }
+
+    .m-gnb-list {
+        margin-top: 2em;
+    }
+
+    .m-gnb-list>li>a {
+        display: flex;
+        gap: 0.5em;
+        align-items: center;
+    }
+
+    .m-gnb-list>li>a img {
+        width: 2em;
+    }
+
+    .facility-section {
+        padding-top: 50px;
+    }
+
+    .sub-visual {
+        height: 320px;
+    }
+
+    .sub-visual h1 {
+        font-size: 32px;
+        letter-spacing: 0.04em;
+    }
+}
+
+/* ============================================================
+   반응형 - 모바일
+============================================================ */
+@media screen and (max-width:767px) {
+
+
+    .hero {
+        height: 200px;
+    }
+
+    .facility-card__desc {
+        font-size: 11px;
+        max-width: 260px;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        /* 몇 줄까지 보여줄지 */
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .facility-card__btn {
+        padding: 4px 10px;
+        margin-top: 10px;
+        font-size: 11px;
+    }
+
+    /* 공통사항 */
+    .btn>a {
+        padding: 4px 0px 4px 12px;
+    }
+
+    .hero__overlay+.inner {
+        margin-top: 50px;
+    }
+}
+
+/* ============================================================
+   반응형 - 작은 모바일
+============================================================ */
+@media screen and (max-width:480px) {
+
+    /* header */
+    .logo {
+        width: 100px;
+    }
+
+    /* main */
+    .address-wrap .address-right {
+        text-align: left;
+    }
+
+    .ks-family-wrap>p img {
+        width: 80%;
+        height: auto;
+    }
+
+    .copy-sns-wrap>.sns-list {
+        display: none;
+    }
+
+    /* .section-head__title {
+        font-size: 3.5em;
+        font-weight: 600;
+        margin: 0 0 12px;
+        font-family: "Minion Pro", serif;
+    } */
+
+    /* .hero__title {
+        font-size: 3.5em;
+        font-weight: 700;
+        white-space: normal;
+        width: 90%;
+    } */
+}
