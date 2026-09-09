@@ -55,6 +55,8 @@ body {
 header {
     position: fixed;
     width: 100%;
+     top: 0;
+    left: 0;
     z-index: 10000;
 }
 
@@ -345,6 +347,8 @@ header:hover .lang-btn > a::before {
 
 .main-slider-list>li .img-box>img{
     width: 100%;
+     top: 0;
+    left: 0;
 }
 /* reservarion-wrap 너비 1440 겹치게 , 
 반투명50% 가운데아래
