@@ -78,7 +78,8 @@ header {
 }
 
 .logo img {
-    width: 90%;
+    width: 162px;
+     height: auto;
 }
 
 
@@ -1541,6 +1542,10 @@ footer {
         .re-right {
         margin-left: 30px;
     }
+    .header-inner{
+        padding: 0 4em;
+    }
+    
 }
 
 @media screen and (max-width:1440px) {
