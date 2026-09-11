@@ -1718,194 +1718,106 @@
     </footer>
 
 
-    <!-- Swiper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.js"></script>
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.js"></script>
 
-    <!-- Initialize Swiper -->
-    <script>
-        // main
-        var mainSwiper = new Swiper('.main-slider', {
-            effect: 'fade',
-            speed: 2500,
-            loop: true,
-
-            autoplay: {
-                delay: 3500,
-                disableOnInteraction: false,
-            },
-
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-
-            fadeEffect: {
-                crossFade: true
-            },
-        });
-
-        // rooms
-        var hotelSwiper = new Swiper('.room-type-hotel', {
-            effect: 'fade',
-            speed: 1500,
-            loop: true,
-            navigation: {
-                nextEl: '.room-type-hotel .swiper-button-next',
-                prevEl: '.room-type-hotel .swiper-button-prev',
-            },
-            fadeEffect: {
-                crossFade: true
-            },
-        });
-
-        var resortSwiper = new Swiper('.room-type-resort', {
-            effect: 'fade',
-            speed: 1500,
-            loop: true,
-            navigation: {
-                nextEl: '.room-type-resort .swiper-button-next',
-                prevEl: '.room-type-resort .swiper-button-prev',
-            },
-            fadeEffect: {
-                crossFade: true
-            },
-        });
-
-        // dining
-        var diningSwiper = new Swiper('.dining-list-wrap', {
-            loop: true,
-
-            slidesPerView: 2.4,
-            spaceBetween: 12,
-
-            breakpoints: {
-
-                768: {
-                    spaceBetween: 16,
-                    centeredSlides: true,
-                },
-                1279: {
-                    spaceBetween: 24,
-                    centeredSlides: true,
-                },
-            },
-        });
+<!-- Header -->
+<script>
+    const header = document.querySelector("header");
+    const mainSlider = document.querySelector(".main-slider-wrap");
+    const headerLeft = document.querySelector(".header-left");
+    const mainMenu = document.querySelector(".main-menu");
+    const subBg = document.querySelector(".sub-bg");
 
 
-        // DINING 프로그레스바
-        var diningProgressFill = document.querySelector("#diningProgressFill");
-        var diningProgressCount = document.querySelector("#diningProgressCount");
-        var diningPrevBtn = document.querySelector("#diningPrevBtn");
-        var diningNextBtn = document.querySelector("#diningNextBtn");
+    // 헤더 스크롤 상태
+    function updateHeader() {
+        const heroBottom = mainSlider.offsetTop + mainSlider.offsetHeight;
 
-        function updateDiningProgress() {
-            var current = diningSwiper.realIndex + 1;
-            var total = 8;
+        if (window.scrollY >= heroBottom) {
+            header.classList.add("menu-hover");
+        } else {
+            header.classList.remove("menu-hover");
+        }
+    }
 
-            diningProgressCount.textContent = current + " / " + total;
+    window.addEventListener("scroll", updateHeader);
 
-            diningProgressFill.style.width =
-                (current / total) * 100 + "%";
+    // 처음 로딩했을 때도 상태 확인
+    updateHeader();
+
+
+    // 메뉴에 마우스 올렸을 때
+    headerLeft.addEventListener("mouseenter", function () {
+        header.classList.add("menu-hover");
+    });
+
+
+    // 메뉴에 마우스를 올렸을 때
+    mainMenu.addEventListener("mouseover", function (e) {
+
+        const menuItem = e.target.closest(".main-menu > li");
+
+        if (!menuItem) return;
+
+        const depth2 = menuItem.querySelector(":scope > .depth2");
+
+        // 뎁스가 없는 메뉴면 흰색 배경도 나오지 않음
+        if (!depth2) {
+            subBg.style.display = "none";
+            return;
         }
 
-        diningPrevBtn.addEventListener("click", function () {
-            diningSwiper.slidePrev();
-        });
 
-        diningNextBtn.addEventListener("click", function () {
-            diningSwiper.slideNext();
-        });
+        // 뎁스가 display:none 상태여도 높이를 측정할 수 있도록 잠깐 표시
+        const originalDisplay = depth2.style.display;
 
-        diningSwiper.on("slideChange", function () {
-            updateDiningProgress();
-        });
-
-        updateDiningProgress();
-
-    </script>
-
-    <!-- aos -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
-    <script>
-        AOS.init({
-            duration: 1400,
-        });
-    </script>
-
-    <!-- GPT가 만들어준 탭 이동 -->
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-
-            // Facility
-            const facilityTabs = document.querySelectorAll(".facility-wrap .tab-menu li");
-            const facilityContents = document.querySelectorAll(".facility-list-wrap > div");
-
-            facilityTabs.forEach((tab, index) => {
-                tab.addEventListener("click", function (e) {
-                    e.preventDefault();
-
-                    facilityTabs.forEach(item => {
-                        item.classList.remove("active");
-                    });
-
-                    facilityContents.forEach(content => {
-                        content.classList.remove("active");
-                    });
-
-                    tab.classList.add("active");
-                    facilityContents[index].classList.add("active");
-                });
-            });
+        if (getComputedStyle(depth2).display === "none") {
+            depth2.style.visibility = "hidden";
+            depth2.style.display = "block";
+        }
 
 
-            // Concierge
-            const conciergeTabs = document.querySelectorAll(".concierge-wrap .tab-menu li");
-            const conciergeContents = document.querySelectorAll(".concierge-list-wrap > div");
-
-            conciergeTabs.forEach((tab, index) => {
-                tab.addEventListener("click", function (e) {
-                    e.preventDefault();
-
-                    conciergeTabs.forEach(item => {
-                        item.classList.remove("active");
-                    });
-
-                    conciergeContents.forEach(content => {
-                        content.classList.remove("on");
-                    });
-
-                    tab.classList.add("active");
-                    conciergeContents[index].classList.add("on");
-                });
-            });
-
-        });
-
-        const roomTabs = document.querySelectorAll(".rooms-wrap .room-tab-menu li");
-        const roomContents = document.querySelectorAll(".room-type-wrap > div");
-
-        roomTabs.forEach((tab, index) => {
-
-            tab.addEventListener("click", function (e) {
-                e.preventDefault();
-                // 모든 탭 active 제거
-                roomTabs.forEach((item) => {
-                    item.classList.remove("active");
-                });
-                // 클릭한 탭 active
-                tab.classList.add("active");
-                roomContents.forEach((content) => {
-                    content.classList.remove("on");
-                });
-                // 클릭한 탭과 같은 순서의 콘텐츠 보여주기
-                roomContents[index].classList.add("on");
-            });
-        });
+        // 실제 뎁스 높이
+        const depthHeight = depth2.scrollHeight + 20;
 
 
-    </script>
-    <script>
+        // 원래 display 상태로 복구
+        if (originalDisplay) {
+            depth2.style.display = originalDisplay;
+        } else {
+            depth2.style.removeProperty("display");
+        }
+
+        depth2.style.removeProperty("visibility");
+
+
+        // 흰색 배경 설정
+        subBg.style.position = "absolute";
+        subBg.style.top = "calc(100% - 1px)";
+        subBg.style.left = "50%";
+        subBg.style.transform = "translateX(-50%)";
+        subBg.style.width = "100vw";
+        subBg.style.height = depthHeight + "px";
+        subBg.style.background = "#fff";
+        subBg.style.margin = "0";
+        subBg.style.padding = "0";
+        subBg.style.display = "block";
+        subBg.style.zIndex = "-1";
+    });
+
+
+    // 메뉴에서 마우스를 뺐을 때
+    headerLeft.addEventListener("mouseleave", function () {
+
+        subBg.style.display = "none";
+
+        // 히어로 아래에서는 흰색 헤더 유지
+        updateHeader();
+    });
+
+
+    // 언어 버튼
     const langBtn = document.querySelector(".lang-btn > a");
     const langText = langBtn.querySelector("span");
 
@@ -1918,20 +1830,206 @@
             langText.textContent = "KR";
         }
     });
-
-const header = document.querySelector("header");
-const headerLeft = document.querySelector(".header-left");
-
-headerLeft.addEventListener("mouseenter", function () {
-    header.classList.add("menu-hover");
-});
-
-headerLeft.addEventListener("mouseleave", function () {
-    header.classList.remove("menu-hover");
-});
 </script>
 
-    <script src="./js/offers-slider.js"></script>
+
+<!-- Initialize Swiper -->
+<script>
+    // main
+    var mainSwiper = new Swiper('.main-slider', {
+        effect: 'fade',
+        speed: 2500,
+        loop: true,
+
+        autoplay: {
+            delay: 3500,
+            disableOnInteraction: false,
+        },
+
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+
+        fadeEffect: {
+            crossFade: true
+        },
+    });
+
+
+    // rooms
+    var hotelSwiper = new Swiper('.room-type-hotel', {
+        effect: 'fade',
+        speed: 1500,
+        loop: true,
+        navigation: {
+            nextEl: '.room-type-hotel .swiper-button-next',
+            prevEl: '.room-type-hotel .swiper-button-prev',
+        },
+        fadeEffect: {
+            crossFade: true
+        },
+    });
+
+
+    var resortSwiper = new Swiper('.room-type-resort', {
+        effect: 'fade',
+        speed: 1500,
+        loop: true,
+        navigation: {
+            nextEl: '.room-type-resort .swiper-button-next',
+            prevEl: '.room-type-resort .swiper-button-prev',
+        },
+        fadeEffect: {
+            crossFade: true
+        },
+    });
+
+
+    // dining
+    var diningSwiper = new Swiper('.dining-list-wrap', {
+        loop: true,
+
+        slidesPerView: 2.4,
+        spaceBetween: 12,
+
+        breakpoints: {
+
+            768: {
+                spaceBetween: 16,
+                centeredSlides: true,
+            },
+
+            1279: {
+                spaceBetween: 24,
+                centeredSlides: true,
+            },
+        },
+    });
+
+
+    // DINING 프로그레스바
+    var diningProgressFill = document.querySelector("#diningProgressFill");
+    var diningProgressCount = document.querySelector("#diningProgressCount");
+    var diningPrevBtn = document.querySelector("#diningPrevBtn");
+    var diningNextBtn = document.querySelector("#diningNextBtn");
+
+    function updateDiningProgress() {
+        var current = diningSwiper.realIndex + 1;
+        var total = 8;
+
+        diningProgressCount.textContent = current + " / " + total;
+
+        diningProgressFill.style.width =
+            (current / total) * 100 + "%";
+    }
+
+    diningPrevBtn.addEventListener("click", function () {
+        diningSwiper.slidePrev();
+    });
+
+    diningNextBtn.addEventListener("click", function () {
+        diningSwiper.slideNext();
+    });
+
+    diningSwiper.on("slideChange", function () {
+        updateDiningProgress();
+    });
+
+    updateDiningProgress();
+</script>
+
+
+<!-- AOS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<script>
+    AOS.init({
+        duration: 1400,
+    });
+</script>
+
+
+<!-- GPT가 만들어준 탭 이동 -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+        // Facility
+        const facilityTabs = document.querySelectorAll(".facility-wrap .tab-menu li");
+        const facilityContents = document.querySelectorAll(".facility-list-wrap > div");
+
+        facilityTabs.forEach((tab, index) => {
+            tab.addEventListener("click", function (e) {
+                e.preventDefault();
+
+                facilityTabs.forEach(item => {
+                    item.classList.remove("active");
+                });
+
+                facilityContents.forEach(content => {
+                    content.classList.remove("active");
+                });
+
+                tab.classList.add("active");
+                facilityContents[index].classList.add("active");
+            });
+        });
+
+
+        // Concierge
+        const conciergeTabs = document.querySelectorAll(".concierge-wrap .tab-menu li");
+        const conciergeContents = document.querySelectorAll(".concierge-list-wrap > div");
+
+        conciergeTabs.forEach((tab, index) => {
+            tab.addEventListener("click", function (e) {
+                e.preventDefault();
+
+                conciergeTabs.forEach(item => {
+                    item.classList.remove("active");
+                });
+
+                conciergeContents.forEach(content => {
+                    content.classList.remove("on");
+                });
+
+                tab.classList.add("active");
+                conciergeContents[index].classList.add("on");
+            });
+        });
+
+    });
+
+
+    // Rooms
+    const roomTabs = document.querySelectorAll(".rooms-wrap .room-tab-menu li");
+    const roomContents = document.querySelectorAll(".room-type-wrap > div");
+
+    roomTabs.forEach((tab, index) => {
+
+        tab.addEventListener("click", function (e) {
+            e.preventDefault();
+
+            // 모든 탭 active 제거
+            roomTabs.forEach((item) => {
+                item.classList.remove("active");
+            });
+
+            // 클릭한 탭 active
+            tab.classList.add("active");
+
+            // 모든 콘텐츠 숨기기
+            roomContents.forEach((content) => {
+                content.classList.remove("on");
+            });
+
+            // 클릭한 탭과 같은 순서의 콘텐츠 보여주기
+            roomContents[index].classList.add("on");
+        });
+    });
+</script>
+
+
+<script src="./js/offers-slider.js"></script>
 
 </body>
 
