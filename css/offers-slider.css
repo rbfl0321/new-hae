@@ -1,0 +1,224 @@
+.offer-list-wrap {
+    position: relative;
+    z-index: 1;
+    isolation: isolate;
+
+    width: 100%;
+    overflow: hidden;
+}
+
+.offer-list {
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+}
+
+.offer-list > .swiper-slide {
+    flex: 0 0 auto;
+    height: auto;
+}
+
+/* 카드 좌우 가장자리의 보이지 않는 클릭 영역 */
+.offer-edge-button {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 2;
+
+    width: 52px;
+    padding: 0;
+
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+}
+
+.offer-edge-button--prev {
+    left: 0;
+}
+
+.offer-edge-button--next {
+    right: 0;
+}
+
+/* 비활성 버튼이 카드 클릭을 가리지 않도록 처리 */
+.offer-edge-button:disabled,
+.offer-edge-button.swiper-button-disabled {
+    pointer-events: none;
+}
+
+.offer-slider-button:focus-visible {
+    outline: 2px solid var(--Primary-color);
+    outline-offset: -2px;
+}
+
+/* 투명 가장자리 버튼은 키보드 대상에서 제외했으므로 아웃라인 제거 */
+.offer-edge-button:focus,
+.offer-edge-button:focus-visible {
+    outline: none;
+}
+
+/* 480px 이하에서는 터치 드래그 사용 */
+@media screen and (max-width: 480px) {
+    .offer-edge-button {
+        display: none;
+    }
+}
+
+/* 슬러이더 컨트롤 영역 : 프로그레스바 + 페이지네이션 */
+.offer-slider-footer {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+
+    margin-top: 48px;
+
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 28px;
+}
+
+/* 프로그래스바 전체 트랙 */
+.offer-progress {
+    position: relative;
+
+    width: 100%;
+    height: 2px;
+
+    overflow: hidden;
+    background-color: var(--Neutral-300);
+}
+
+/* 현재 진행 위치 */
+.offer-progress-fill {
+    display: block;
+
+    width: 0;
+    height: 100%;
+
+    background-color: var(--Primary-color);
+
+    transform-origin: left center;
+    transition: width 0.4s ease;
+}
+
+/* 페이지 번호와 좌우 버튼 */
+.offer-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 6px;
+}
+
+/* 하단 좌우 쉐브론 버튼 */
+.offer-control-button {
+    width: 32px;
+    height: 32px;
+    padding: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 0;
+    background: transparent;
+    color: var(--Neutral-700);
+
+    cursor: pointer;
+}
+
+/* 쉐브론 모양 */
+.offer-control-chevron {
+    width: 7px;
+    height: 7px;
+
+    border-top: 1px solid currentColor;
+    border-right: 1px solid currentColor;
+}
+
+/* 이전 쉐브론 */
+.offer-control-button--prev .offer-control-chevron {
+    transform: rotate(-135deg);
+}
+
+/* 다음 쉐브론 */
+.offer-control-button--next .offer-control-chevron {
+    transform: rotate(45deg);
+}
+
+/* 현재 페이지 / 전체 페이지 */
+.offer-page-status {
+    min-width: 42px;
+    margin: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1;
+    color: var(--Neutral-700);
+}
+
+/* 비활성화된 버튼 */
+.offer-control-button:disabled {
+    opacity: 0.3;
+    cursor: default;
+}
+
+/* 마우스 호버 */
+.offer-control-button:not(:disabled):hover {
+    color: var(--Primary-color);
+}
+
+/* 키보드 포커스 */
+.offer-control-button:focus-visible {
+    outline: 2px solid var(--Primary-color);
+    outline-offset: 1px;
+}
+
+/* 767px 이하 */
+@media screen and (max-width: 767px) {
+    .offer-slider-footer {
+        margin-top: 28px;
+        gap: 16px;
+    }
+}
+
+/* 480px 이하 */
+@media screen and (max-width: 480px) {
+    .offer-slider-footer {
+        margin-top: 24px;
+
+       /* 모바일에서도 프로그래스바와 페이지네이션을 한 줄로 유지 */
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 12px;
+
+    }
+
+    /* 프로그래스바는 가로 전체 너비 사용 */
+    .offer-progress {
+        width: 100%;
+    }
+
+    /* 페이지 컨트롤은 오른쪽 정렬 */
+    .offer-pagination {
+        justify-self: end;
+        gap: 2px;
+    }
+
+    /* 모바일 터치 영역 확보 */
+    .offer-control-button {
+        width: 44px;
+        height: 44px;
+    }
+}

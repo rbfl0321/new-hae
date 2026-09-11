@@ -26,6 +26,17 @@
     /* transition */
 }
 
+html {
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+}
+
+section {
+    scroll-snap-align: start;
+    scroll-margin-top: 90px;
+}
+
+
 
 body {
     
@@ -426,13 +437,28 @@ padding 위아래20 좌우 32*/
 /* 글자 흰색 15px */
 .reservation-wrap>.re-left .re-item-title{
     color: #fff;
+    font-weight: 300;
     }
 
 /* 글자색 Ne 400 15px,아래 선 */
 .reservation-wrap>.re-left .re-data{
     color:var(--Neutral-400) ;
-    border-bottom:1px solid var(--Neutral-200);
+    border-bottom:1.3px solid var(--Neutral-100);
     }
+    .reservation-wrap>.re-left .re-data input{
+    background: none;
+    border: none;
+    color: var(--Neutral-400); /* 기본 글자색 추가 */
+}
+
+.reservation-wrap>.re-left .re-data.is-selected input{
+    color: #fff;
+}
+
+/* 선택완료 누르면 이 클래스가 붙어서 흰색으로 바뀜 */
+.reservation-wrap>.re-left .re-data.is-selected{
+    color: #fff;
+}
 
     .reservation-wrap>.re-left .select-hotel,
     .reservation-wrap>.re-left .select-date{
@@ -472,44 +498,71 @@ display: none;
    .room-popup (객실/인원 선택 팝업)
    ================================================== */
 /* 1. 기본 팝업 설정 (기본 크기: 510px * 268px) */
-.room-popup {
-    display: none; /* 기본 숨김 (JS open 시 flex 또는 display 조절) */
-    position: absolute;
-    left: 0;
-    width: 510px;
-    background: #ffffff;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-    padding: 24px 28px 20px;
-    box-sizing: border-box;
-    z-index: 1000;
-    transition: height 0.3s ease; /* 높이 변화 애니메이션 */
+.reservation-wrap .select-btn:hover{
+    background-color: var(--Primary-Pressed-color);
 }
 
-/* 2. 객실이 추가되어 active 또는 is-expanded 클래스가 추가되었을 때 (크기: 510px * 319px) */
-.room-popup.is-expanded,
-.room-popup.active {
-    height: 319px;
+.reservation-wrap .select-btn{
+    width: 110px;
+    height: 36px;
+    background-color: var(--Primary-color); /* 이미지상의 짙은 블루 톤 */
+    color: #fff;
+    border-radius: 3px;
+    font-size: 14px;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
 }
 
-/* 닫기 버튼 (X) */
-.room-popup .close-btn {
+.reservation-wrap .close-btn{
     position: absolute;
     top: 20px;
     right: 24px;
-    width: 20px;
-    height: 20px;
+    width: 19px;
+    height: 19px;
     background: url("../images/icon/close.svg") no-repeat center / contain;
     border: none;
     cursor: pointer;
 }
 
+.count-set-wrap {
+    /* position: relative; */
+}
+
+.room-popup {
+    display: none;
+    /* bottom: calc(100% - 30px);  ← 이 줄 삭제 */
+    width: 510px;
+    background: #ffffff;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    padding: 24px 28px 12px;
+    box-sizing: border-box;
+    z-index: 1000;
+}
+
+.reservation-wrap>div>div>.pop{
+    left:0;
+    /* bottom: 20px; 80 → 30으로 줄여서 하단바에 더 붙임, 필요시 더 조절 */
+    position:absolute;
+}
+
+/* 2. 객실이 추가되어 active 또는 is-expanded 클래스가 추가되었을 때 (크기: 510px * 319px) */
+.room-popup.is-expanded,
+.room-popup.active {
+    height: auto;
+}
+.reservation-wrap>div>div>.room-popup.pop {
+    left: 588px;
+}
 /* 타이틀: 객실 / 인원 */
 .room-popup .popup-title {
-    font-size: 15px;
-    font-weight: 600;
+    font-size: 12px;
+    font-weight: 500;
     color: var(--Neutral-500);
     padding-bottom: 20px;
     border-bottom: 1px solid var(--Primary-Subtle-color);
+    
     margin-bottom: 20px;
 }
 
@@ -525,7 +578,7 @@ display: none;
     margin-bottom: 18px;
     background: transparent;
     border: none;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 600;
     color: var(--Neutral-900);
     cursor: pointer;
@@ -559,8 +612,8 @@ display: none;
 }
 
 .select-room-list .addRoom > p {
-    font-size: 15px;
-    font-weight: 700;
+    font-size: 14px;
+    font-weight: 500;
     color: var(--Neutral-900);
     min-width: 60px;
 }
@@ -636,31 +689,16 @@ display: none;
 .room-popup .btn-list {
     display: flex;
     justify-content: center;
-    margin-top: 22px;
+    margin-top:12px;
 }
 
-.room-popup .select-btn {
-    width: 120px;
-    height: 36px;
-    background-color: var(--Primary-color);
-    color: #fff;
-    font-size: 14px;
-    font-weight: 600;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.2s;
-}
-
-.room-popup .select-btn:hover {
-    background-color: var(--Primary-Hover-color);
-}
 /* ==================================================
    .date-popup (날짜 선택 팝업)
    ================================================== */
 /* ===== hotel-popup 호텔/리조트 선택 팝업 ===== */
 .reservation-wrap>div>div>.pop{
     left:0;
-    bottom:80px;
+    bottom:85px;
     position:absolute;
 }
 /* ===== date-popup 체크인/체크아웃 날짜 선택 팝업 ===== */
@@ -670,26 +708,11 @@ display: none;
     left: 0;
     background: #fff;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-    padding: 32px 36px 28px;
+    padding: 32px 36px 0px;
     box-sizing: border-box;
     flex-direction: column;
     justify-content: space-between;
     z-index: 1000;
-}
-/* 닫기 버튼 (우측 상단 X) */
-.date-popup .close-btn {
-    position: absolute;
-    top: 24px;
-    right: 28px;
-    width: 20px;
-    height: 20px;
-    background-image: url("../images/icon/close.svg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
 }
 /* 상단 헤더 영역 (체크인/체크아웃 날짜 표시) */
 .date-popup .popup-title {
@@ -703,6 +726,8 @@ display: none;
 .date-popup .popup-title .check-out {
     display: flex;
     flex-direction: column;
+    font-size:16px;
+    font-weight: 500;
     gap: 4px;
 }
 
@@ -712,35 +737,14 @@ display: none;
     font-weight: 400;
 }
 
-.date-popup .popup-title strong {
-    font-size: 18px;
-    font-weight: 700;
-    color: var(--Neutral-900);
-}
-
 /* 하단 버튼 영역 (우측 하단 정렬) */
 .date-popup .btn-list {
     display: flex;
-    justify-content: flex-end;
-    margin: 0;
+    justify-content: center;
+    margin: 12px;
     padding: 0;
 }
 
-.date-popup .select-btn {
-    width: 130px;
-    height: 44px;
-    background-color: var(--Primary-Hover-color); /* 이미지상의 짙은 블루 톤 */
-    color: #fff;
-    font-size: 15px;
-    font-weight: 500;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
-}
-
-.date-popup .select-btn:hover {
-    background-color: var(--Primary-Pressed-color);
-}
 .hotel-popup {
     width: 276px;
     flex-direction: column;
@@ -751,26 +755,10 @@ display: none;
     display: none;
 }
  
-.hotel-popup .close-btn {
-    position: absolute;
-    top: 16px;
-    right: 16px;
-    width: 19px;
-    height: 19px;
-    background-image: url("../images/icon/close.svg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    background-color: transparent;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-}
- 
 .hotel-popup .popup-title {
     padding: 16px;
-    font-size: 15px;
-    font-weight: 600;
+    font-size: 12px;
+    font-weight: 500;
     color: var(--Neutral-500);
     border-bottom: 1px solid var(--Primary-Subtle-color);
 }
@@ -791,7 +779,8 @@ display: none;
     height: 50px;
     background: none;
     border: none;
-    font-size: 14px;
+    font-weight: 400;
+    font-size: 16px;
     color: var(--Neutral-900);
     cursor: pointer;
 }
@@ -807,7 +796,7 @@ display: none;
 
    .hotel-popup .btn-list:first-of-type .popup-btn.on{
     background: var(--Primary-Subtle-color);
-    font-weight: 600;
+    font-weight: 500;
 }
 
 /* 선택완료 버튼 영역 */
@@ -817,22 +806,25 @@ display: none;
     padding: 12px 16px;
 }
  
-.hotel-popup .select-btn {
-    display: block;
-    width: 110px;
-    height: 36px;
-    background: var(--Primary-color);
-    color: #fff;
-    font-size: 14px;
-    font-weight: 600;
-    border: none;
-    cursor: pointer;
-}
 /*  */
 /* main */
 /* main 공통영역 */
 section{
     padding-top: 200px;
+}
+
+.offers-section .title-box{
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8em;
+}
+
+.offers-section .title-box > div{
+  display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    font-size: inherit;
+    width: 100%;
 }
 
 /* title-box */
@@ -846,9 +838,9 @@ section{
 
 .title-box .section-title {
     font-family: "Minion Pro";
-    font-size: 3.38em;
+    font-size: 56px;
     font-weight: 400;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     /* margin: 0;
     line-height: 1; */
 }
@@ -860,15 +852,13 @@ section{
 }
 
 
-
-
 .title-box>div .more-btn>a{
     color: var(--Primary-color);
-    /* background: url(../images/Icon/Icon/arrow-more.png) no-repeat center; */
     line-height: 1.5;
     font-size: 12px;
     letter-spacing: 0.02em;
-    /* padding-right: 300px; */
+    
+    
 }
 
 /* tab-menu */
@@ -1053,6 +1043,7 @@ section{
     position : absolute;
     bottom:0;
 }
+
 /* rooms */
 .room-type-wrap{}
 .room-type-wrap>div{
