@@ -2147,32 +2147,50 @@ footer {
     gap: 12px;
 }
 
-@media (min-width: 1980px) {
-      .main-menu {
-        margin-left: 20px;
-        gap: 30px;
-        }
-        .re-right {
-        margin-left: 30px;
-    }
-    .header-inner{
-        padding: 0 4em;
-    }
-    
-}
+
+
+/* 반응형 */
+
 
 @media screen and (max-width:1440px) {
-    .main-slider-list>li .text-box{
+    .inner {
+        width: 1320px;
+        margin: 0 auto;
+    }
+
+    .main-slider-list>li .text-box {
         width: 100%;
         bottom: 10%;
         padding: 1em;
-        
     }
-    .reservation-wrap{
-        width: 100%;
+
+    .reservation-wrap {
+        width: 1280px;
+        transform: translateX(-50%) scale(0.917);
+        transform-origin: center bottom;
     }
-    
+
+        .main-slider-list>li .text-box {
+        width: 1240px;
+        bottom: 200px;
+        transform: translateX(-50%);
+    }
+
+    .main-slider-list>li .text-box>span {
+        font-size: 14px;
+    }
+
+    .main-slider-list>li .text-box>strong {
+        font-size: 2.4em;
+    }
+
+    .main-slider-list>li .text-box>p {
+        font-size: 16px;
+    }
+
 }
+    
+
 /* 아이패드 */
 @media screen and (max-width:1279px){
     body{
