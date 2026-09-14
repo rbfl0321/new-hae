@@ -136,38 +136,15 @@ if (offerSliderElement && typeof Swiper !== "undefined") {
         /*
          * 360px 이하: 카드 1장
          */
-        slidesPerView: 1,
-        slidesPerGroup: 1,
-        spaceBetween: 16,
+       slidesPerView: "auto",
+       slidesPerGroup: 1,
+       spaceBetween: 20,
+       autoplay: {
+    delay: 1500,
+    disableOnInteraction: false
+},
 
-        breakpoints: {
-            /*
-             * 361~767px: 카드 2장
-             */
-            361: {
-                slidesPerView: 2,
-                slidesPerGroup: 2,
-                spaceBetween: 16
-            },
-
-            /*
-             * 768~1279px: 카드 3장
-             */
-            768: {
-                slidesPerView: 3,
-                slidesPerGroup: 3,
-                spaceBetween: 20
-            },
-
-            /*
-             * 1280px 이상: 카드 3장
-             */
-            1280: {
-                slidesPerView: 3,
-                slidesPerGroup: 3,
-                spaceBetween: 24
-            }
-        },
+speed: 1000,
 
         /*
          * 하단에 보이는 쉐브론 버튼 연결
