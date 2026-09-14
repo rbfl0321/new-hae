@@ -329,3 +329,314 @@ bookBtn?.addEventListener('click', () => {
 
     
 });
+
+/* =========================
+   날짜 선택 달력
+========================= */
+
+const calendarArea = datePop?.querySelector('.calendar-area');
+const checkInText = datePop?.querySelector('.check-in strong');
+const checkOutText = datePop?.querySelector('.check-out strong');
+const selectedDateText = document.querySelector('.select-date a');
+
+let checkInDate = null;
+let checkOutDate = null;
+
+let calendarStartDate = new Date(2026, 8, 1); // 2026년 9월
+let selectingCheckOut = false;
+
+// 요일
+const weekNames = ['일', '월', '화', '수', '목', '금', '토'];
+
+// 날짜 표시 형식
+const formatDate = (date) => {
+    if (!date) return '';
+
+    const year = date.getFullYear();
+    const month = date.getMonth() + 1;
+    const day = date.getDate();
+    const week = weekNames[date.getDay()];
+
+    return `${year}.${month}.${day} (${week})`;
+};
+
+// 날짜 비교용
+const dateKey = (date) => {
+    if (!date) return '';
+
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const day = String(date.getDate()).padStart(2, '0');
+
+    return `${year}-${month}-${day}`;
+};
+
+// 날짜가 같은지 확인
+const isSameDate = (date1, date2) => {
+    return date1 && date2 && dateKey(date1) === dateKey(date2);
+};
+
+// 날짜가 범위 안에 있는지 확인
+const isBetweenDates = (date, start, end) => {
+    if (!date || !start || !end) return false;
+
+    return date > start && date < end;
+};
+
+// 날짜 생성
+const createDate = (year, month, day) => {
+    return new Date(year, month, day);
+};
+
+// 달력 한 달 생성
+const createMonthCalendar = (year, month) => {
+    const monthWrap = document.createElement('div');
+    monthWrap.className = 'calendar-month';
+
+    const monthTitle = document.createElement('div');
+    monthTitle.className = 'calendar-month-title';
+
+    const monthName = document.createElement('strong');
+    monthName.textContent = `${year}.${String(month + 1).padStart(2, '0')}`;
+
+    monthTitle.appendChild(monthName);
+    monthWrap.appendChild(monthTitle);
+
+    const weekRow = document.createElement('div');
+    weekRow.className = 'calendar-week';
+
+    weekNames.forEach((week, index) => {
+        const weekItem = document.createElement('span');
+        weekItem.textContent = week;
+
+        if (index === 0) {
+            weekItem.classList.add('sunday');
+        }
+
+        if (index === 6) {
+            weekItem.classList.add('saturday');
+        }
+
+        weekRow.appendChild(weekItem);
+    });
+
+    monthWrap.appendChild(weekRow);
+
+    const daysWrap = document.createElement('div');
+    daysWrap.className = 'calendar-days';
+
+    const firstDay = new Date(year, month, 1).getDay();
+    const lastDate = new Date(year, month + 1, 0).getDate();
+
+    // 첫 주 빈칸
+    for (let i = 0; i < firstDay; i++) {
+        const emptyDay = document.createElement('span');
+        emptyDay.className = 'empty-day';
+        daysWrap.appendChild(emptyDay);
+    }
+
+    // 날짜 생성
+    for (let day = 1; day <= lastDate; day++) {
+        const date = createDate(year, month, day);
+        const dateButton = document.createElement('button');
+
+        dateButton.type = 'button';
+        dateButton.className = 'calendar-day';
+        dateButton.textContent = day;
+
+        const dayOfWeek = date.getDay();
+
+        if (dayOfWeek === 0) {
+            dateButton.classList.add('sunday');
+        }
+
+        if (dayOfWeek === 6) {
+            dateButton.classList.add('saturday');
+        }
+
+        // 체크인 날짜
+        if (isSameDate(date, checkInDate)) {
+            dateButton.classList.add('check-in-day');
+        }
+
+        // 체크아웃 날짜
+        if (isSameDate(date, checkOutDate)) {
+            dateButton.classList.add('check-out-day');
+        }
+
+        // 체크인~체크아웃 사이
+        if (isBetweenDates(date, checkInDate, checkOutDate)) {
+            dateButton.classList.add('between-day');
+        }
+
+        dateButton.addEventListener('click', () => {
+            selectCalendarDate(date);
+        });
+
+        daysWrap.appendChild(dateButton);
+    }
+
+    monthWrap.appendChild(daysWrap);
+
+    return monthWrap;
+};
+
+// 달력 전체 출력
+const renderCalendar = () => {
+    if (!calendarArea) return;
+
+    calendarArea.innerHTML = '';
+
+    const calendarHeader = document.createElement('div');
+    calendarHeader.className = 'calendar-header';
+
+    const prevButton = document.createElement('button');
+    prevButton.type = 'button';
+    prevButton.className = 'calendar-prev';
+    prevButton.setAttribute('aria-label', '이전 달');
+    prevButton.textContent = '‹';
+
+    const nextButton = document.createElement('button');
+    nextButton.type = 'button';
+    nextButton.className = 'calendar-next';
+    nextButton.setAttribute('aria-label', '다음 달');
+    nextButton.textContent = '›';
+
+    prevButton.addEventListener('click', () => {
+        calendarStartDate.setMonth(calendarStartDate.getMonth() - 1);
+        renderCalendar();
+    });
+
+    nextButton.addEventListener('click', () => {
+        calendarStartDate.setMonth(calendarStartDate.getMonth() + 1);
+        renderCalendar();
+    });
+
+    calendarHeader.appendChild(prevButton);
+    calendarHeader.appendChild(nextButton);
+
+    calendarArea.appendChild(calendarHeader);
+
+    const calendarMonths = document.createElement('div');
+    calendarMonths.className = 'calendar-months';
+
+    const firstYear = calendarStartDate.getFullYear();
+    const firstMonth = calendarStartDate.getMonth();
+
+    const secondDate = new Date(firstYear, firstMonth + 1, 1);
+    const secondYear = secondDate.getFullYear();
+    const secondMonth = secondDate.getMonth();
+
+    calendarMonths.appendChild(
+        createMonthCalendar(firstYear, firstMonth)
+    );
+
+    calendarMonths.appendChild(
+        createMonthCalendar(secondYear, secondMonth)
+    );
+
+    calendarArea.appendChild(calendarMonths);
+};
+
+// 날짜 선택
+const selectCalendarDate = (date) => {
+    // 첫 번째 날짜 선택
+    if (!checkInDate || selectingCheckOut === false) {
+        checkInDate = new Date(date);
+        checkOutDate = null;
+        selectingCheckOut = true;
+
+        if (checkInText) {
+            checkInText.textContent = formatDate(checkInDate);
+        }
+
+        if (checkOutText) {
+            checkOutText.textContent = '날짜를 선택해주세요';
+        }
+
+        renderCalendar();
+        return;
+    }
+
+    // 체크인보다 이전 날짜를 선택하면 새 체크인으로 설정
+    if (date < checkInDate) {
+        checkInDate = new Date(date);
+        checkOutDate = null;
+        selectingCheckOut = true;
+
+        if (checkInText) {
+            checkInText.textContent = formatDate(checkInDate);
+        }
+
+        if (checkOutText) {
+            checkOutText.textContent = '날짜를 선택해주세요';
+        }
+
+        renderCalendar();
+        return;
+    }
+
+    // 두 번째 날짜 = 체크아웃
+    checkOutDate = new Date(date);
+    selectingCheckOut = false;
+
+    if (checkInText) {
+        checkInText.textContent = formatDate(checkInDate);
+    }
+
+    if (checkOutText) {
+        checkOutText.textContent = formatDate(checkOutDate);
+    }
+
+    renderCalendar();
+};
+
+// 기존 날짜 텍스트에서 날짜 가져오기
+const getInitialDate = () => {
+    const text = selectedDateText?.textContent || '';
+
+    const match = text.match(
+        /(\d{4})\.(\d{1,2})\.(\d{1,2}).*?-\s*(\d{4})\.(\d{1,2})\.(\d{1,2})/
+    );
+
+    if (!match) return;
+
+    checkInDate = new Date(
+        Number(match[1]),
+        Number(match[2]) - 1,
+        Number(match[3])
+    );
+
+    checkOutDate = new Date(
+        Number(match[4]),
+        Number(match[5]) - 1,
+        Number(match[6])
+    );
+
+    calendarStartDate = new Date(
+        checkInDate.getFullYear(),
+        checkInDate.getMonth(),
+        1
+    );
+};
+
+// 날짜 선택완료
+dateSelectBtn?.addEventListener('click', () => {
+    if (!checkInDate || !checkOutDate) {
+        alert('체크인과 체크아웃 날짜를 모두 선택해주세요.');
+        return;
+    }
+
+    if (selectedDateText) {
+        selectedDateText.textContent =
+            `${formatDate(checkInDate)} - ${formatDate(checkOutDate)}`;
+    }
+});
+
+// 달력 초기화
+getInitialDate();
+renderCalendar();
+/* 날짜 달력 내부 클릭 시 팝업이 닫히지 않도록 방지 */
+datePop?.addEventListener('click', (e) => {
+    e.stopPropagation();
+});
