@@ -1876,8 +1876,8 @@ footer {
     padding: 80px 0;
 }
 
-.footer-logo {
-    width: 180px !important;
+.footer-logo img {
+    width: 200px;
     height: auto;
 }
 
@@ -1916,12 +1916,16 @@ footer {
     display: flex;
     justify-content: space-between;
     margin: 40px 0;
+    
 }
 
 .ks-family-wrap .family-site {
     display: flex;
+    gap: 10px;
+    
 
 }
+
 
 .ks-family-wrap .family-site>li {}
 
@@ -1932,6 +1936,7 @@ footer {
     background-image: url(../images/branches/Branches.png);
     background-position-y: center;
     text-indent: -9999px;
+    
 }
 
 .ks-family-wrap .family-site>li:nth-child(2)>a {
@@ -1946,6 +1951,12 @@ footer {
     background-position-x: -330px;
 }
 
+.ks-family-wrap-left,
+.ks-family-wrap-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
 
 
 .copy-sns-wrap {
