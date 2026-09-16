@@ -2983,6 +2983,17 @@ footer {
     transition: 0.5s;
 }
 
+.btn>a {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid var(--Neutral-100);
+    color: var(--Neutral-100);
+    padding: 6px 10px;
+    gap: 8px;
+    transition: 0.3s;
+    font-size: 12px;
+}
+
 .facility-wrap .title-box .section-title {
     font-size: 42px;
     font-weight: 200;
@@ -3065,6 +3076,17 @@ footer {
     justify-content: space-between;
 }
 
+.membership-wrap .btn>a {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid var(--Neutral-900) !important;
+    color: var(--Neutral-900) !important;
+    padding: 6px 10px;
+    gap: 8px;
+    transition: 0.3s;
+    font-size: 12px;
+}
+
 .membership-wrap .title-box {
     flex-direction: column;
     align-items: flex-start;
@@ -3121,16 +3143,16 @@ footer {
 
 .footer-menu {
     display: flex;
-    gap: 1.2em;
-    margin: 2.4em 0;
-    font-size: 14.4px;
+    gap: 1em;
+    margin: 2em 0;
+    font-size: 14px;
 }
 
 .address-wrap {
     display: flex;
     justify-content: space-between;
-    line-height: 1.76;
-    font-size: 12.8px;
+    line-height: 1.9;
+    font-size: 12px;
 }
 
 .address-wrap .address-left>p {
@@ -3150,12 +3172,13 @@ footer {
 .ks-family-wrap {
     display: flex;
     justify-content: space-between;
-    margin: 32px 0;
+    margin: 26px 0;
+    gap: 80px;
 }
 
 .ks-family-wrap .family-site {
     display: flex;
-    gap: 8px;
+    gap: 0px;
 }
 
 .ks-family-wrap .family-site>li>a {
@@ -3184,15 +3207,29 @@ footer {
 .ks-family-wrap-right {
     display: flex;
     align-items: center;
-    gap: 16px;
+    gap: 20px;
+    font-size: 14px;
+    white-space: nowrap;
+    
+}
+
+.ks-family-wrap-left p,
+.ks-family-wrap-right p {
+    white-space: nowrap;
+}
+
+.ks-family-wrap-left img,
+.ks-family-wrap-right img {
+     width: 100px;
+    height: auto;
 }
 
 .copy-sns-wrap {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 9.6px;
-    margin-top: 80px;
+    font-size: 10px;
+    margin-top: 60px;
 }
 
 .copy-sns-wrap>.sns-list {
@@ -3200,6 +3237,10 @@ footer {
     gap: 9.6px;
 }
 
+}
+
+@media screen and (max-width:767px){
+    
 }
 
 
