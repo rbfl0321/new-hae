@@ -3241,8 +3241,417 @@ footer {
 
 @media screen and (max-width:767px){
     
+    
+    body {
+        font-size: 12px;
+    }
+    header{
+        top: 15px;
+    }
+     .inner {
+        width: calc(100% - 40px);
+        margin: 0 auto;
+    }
+    /* 공통사항 */
+    .title-box {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1em;
+        margin-bottom: 1em;
+    }
+
+    .title-box .section-title {
+        font-size: 2em;
+    }
+
+    .btn>a {
+        padding: 4px 0px 4px 12px;
+    }
+    
+
+   .main-slider-list>li .img-box {
+    height: 900px;
+}
+
+.main-slider-list>li .img-box>img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+    .main-menu,
+    .gnb-list {
+        display: none;
+    }
+    
+    /* PC 메뉴 숨김 */
+    .main-menu,
+    .gnb-list {
+        display: none;
+    }
+
+    /* 로고 축소 */
+    .header-left .logo img {
+        width: 120px;
+    }
+
+    /* 예약하기 버튼 숨김 */
+    .header-right .re-right {
+        display: none;
+    }
+     header.menu-hover {
+    position: fixed;
+}
+
+header.menu-hover::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -20px;
+    bottom: -20px;
+    background: #fff;
+    z-index: -1;
+}
+    /* 햄버거 보이기 */
+    .ham-btn {
+        display: block;
+    }
+
+    /* 햄버거 아이콘 흰색 */
+    .ham-btn img {
+        filter: brightness(0) invert(1);
+
+}
+
+header.menu-hover .ham-btn img {
+        filter: none;}
+.reservation-wrap {
+        display: none;
+    }
+
+ .main-slider-list>li .text-box {
+        width: 1260px;
+        transform: translateX(-35%);
+    }
+
+    .main-slider-list>li .text-box>span {
+        font-size: 14px;
+    }
+
+    .main-slider-list>li .text-box>strong {
+        font-size: 2.2em;
+    }
+
+    .main-slider-list>li .text-box>p {
+        font-size: 14px;
+    }
+
+    .hero-progress {
+        left: 25%;
+        bottom: 170ㄴpx;
+        width: 240px;
+        gap: 12px;
+        font-size: 12px;
+    }
+
+    .hero-progress-bar {
+        width: 240px;
+        height: 3px;
+    }
+
+    .hero-progress-count {
+        gap: 4px;
+        font-size: 12px;
+    }
+
+    
+     .offers-section .offer-list .swiper-slide {
+        width: 345px;
+    }
+
+    .offer-list>li .text-box>h3 {
+    font-size: 1.3em;
+    color: var(--Neutral-900);
+    font-weight: 500;
+}
+
+  .title-box .section-title {
+        font-size: 38px;
+    }
+
+    .title-box>div>p {
+        font-size: 13px;
+    }
+
+.room-type-wrap>div>ul .swiper-slide .text-box {
+    width: calc(100% - 553px);
+    padding: 0 4px 0 40px;
+    box-sizing: border-box;
+}
+
+.room-type-wrap>div>ul .swiper-slide .img-box {
+    width: 504px;
+    height: 286px;
+    overflow: hidden;
+    transform: translateX(48px);
+}
+
+.room-type-wrap>div>ul .swiper-slide .img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
 }
 
 
+/* 객실 타이틀 */
+.room-type-wrap>div>ul .text-box>.left .room-main-title span {
+    font-size: 14px;
+}
+
+/* 객실명 */
+.room-type-wrap>div>ul .text-box>.left h3 {
+    font-size: 12px;
+}
+
+/* 설명 */
+.room-type-wrap>div>ul .text-box>.left h3+p {
+    font-size: 12px;
+    max-width: 370px;
+    height: auto;
+    margin: 0.85em 0 1.7em;
+}
+
+/* 객실 카테고리 */
+.room-type-wrap>div>ul .text-box>.left .room-category {
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+/* 객실 정보 */
+.room-type-wrap>div>ul .text-box>.right .room-info-list {
+    column-gap: 1.3em;
+    row-gap: 1em;
+}
+
+.room-type-wrap>div>ul .text-box>.right .room-info-list>div {
+    gap: 5px;
+    font-size: 11px;
+}
 
 
+/* 화살표 */
+.room-type-wrap .swiper-button-prev,
+.room-type-wrap .swiper-button-next {
+    width: 38px;
+    height: 37px;
+    ransform: translateY(-40px);
+}
+
+.room-type-wrap .swiper-button-prev {
+    left: 34%;
+}
+
+
+/* 인디케이터 */
+.room-pagination {
+    right: 21px;
+    bottom: 26px;
+    gap: 9px;
+    font-size: 10px;
+}
+
+.room-pagination .line {
+    width: 38px;
+}
+
+
+.room-type-wrap>div>ul .text-box>.left .room-main-title {
+    transform: translateY(32px);
+    margin-bottom: 13px;
+    font-size: 20px;
+}
+
+.room-type-wrap>div>ul .text-box>.left .btn {
+    transform: translateY(-20px) scale(0.8);
+    transform-origin: left center;
+}
+.room-type-wrap>div>ul .text-box>.left .btn a {
+    color: var(--Neutral-900);
+    border-color: var(--Neutral-900);
+    background-color: transparent;
+}
+.room-type-wrap>div>ul .swiper-slide .text-box>.left {
+    transform: translateY(-20px);
+}
+
+.room-type-wrap>div>ul .text-box>.left h3,
+.room-type-wrap>div>ul .text-box>.left h3+p,
+.room-type-wrap>div>ul .text-box>.left .room-category {
+    transform: translateY(-12px);
+}
+
+.membership-wrap {
+    padding: 54px 0;
+    background: var(--Neutral-300);
+    margin-top: 9em;
+}
+
+.membership-wrap>.inner {
+    display: flex;
+    justify-content: space-between;
+}
+
+.membership-wrap .btn>a {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid var(--Neutral-900) !important;
+    color: var(--Neutral-900) !important;
+    padding: 5px 9px;
+    gap: 7px;
+    transition: 0.3s;
+    font-size: 11px;
+}
+
+.membership-wrap .title-box {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.9em;
+    margin-bottom: 0;
+    transform: translateY(0);
+}
+
+.membership-wrap .title-box>div {
+    display: flex;
+    gap: 1em;
+    transform: translateY(27px) scale(0.9);
+    transform-origin: left top;
+    margin-top: -18px;
+}
+
+.membership-wrap .title-box>.section-title {
+    font-family: "Pretendard", sans-serif;
+    text-transform: capitalize;
+    font-weight: 500;
+    font-size: 25px;
+}
+
+.membership-wrap .title-box>p {
+    font-weight: 400;
+    font-size: 12.5px;
+}
+
+.membership-card {
+    display: flex;
+    gap: 0.4em;
+}
+.membership-card > :nth-child(2) img {
+    transform: translateX(-20px);
+}
+footer {
+    background: var(--Neutral-900);
+    color: #fff;
+    padding: 58px 0;
+}
+
+.footer-logo img {
+    width: 144px;
+    height: auto;
+}
+
+.footer-menu {
+    display: flex;
+    gap: 0.9em;
+    margin: 1.8em 0;
+    font-size: 12.6px;
+}
+
+.address-wrap {
+    display: flex;
+    justify-content: space-between;
+    line-height: 1.7;
+    font-size: 10.8px;
+}
+
+.address-wrap .address-left>p {
+    display: flex;
+    align-items: center;
+    gap: 0.7em;
+}
+
+.address-wrap .address-left>p img {
+    filter: invert();
+}
+
+.address-wrap .address-right {
+    text-align: end;
+}
+
+.ks-family-wrap {
+    display: flex;
+    justify-content: space-between;
+    margin: 23px 0;
+    gap: 72px;
+}
+
+.ks-family-wrap .family-site {
+    display: flex;
+    gap: 0;
+}
+
+.ks-family-wrap .family-site>li>a {
+    display: block;
+    width: 79px;
+    height: 24px;
+    background-image: url(../images/branches/Branches.png);
+    background-position-y: center;
+    background-size: 317px auto;
+    text-indent: -9999px;
+}
+
+.ks-family-wrap .family-site>li:nth-child(2)>a {
+    background-position-x: -79px;
+}
+
+.ks-family-wrap .family-site>li:nth-child(3)>a {
+    background-position-x: -158px;
+}
+
+.ks-family-wrap .family-site>li:nth-child(4)>a {
+    background-position-x: -237px;
+}
+
+.ks-family-wrap-left,
+.ks-family-wrap-right {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    font-size: 12.6px;
+    white-space: nowrap;
+}
+
+.ks-family-wrap-left p,
+.ks-family-wrap-right p {
+    white-space: nowrap;
+}
+
+.ks-family-wrap-left img,
+.ks-family-wrap-right img {
+    width: 90px;
+    height: auto;
+}
+
+.copy-sns-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 9px;
+    margin-top: 54px;
+}
+
+.copy-sns-wrap>.sns-list {
+    display: flex;
+    gap: 8.6px;
+}
+}
