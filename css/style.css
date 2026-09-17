@@ -4202,20 +4202,25 @@ header.menu-hover .ham-btn img {
     .membership-card > :nth-child(1) img {
         transform: translateX(-30px);
     }
-footer {
-        padding: 45px 0;
+ footer {
+        padding: 35px 0;
     }
 
+
     .footer-logo img {
-        width: 120px;
+        width: 135px;
     }
+
+    .footer-menu {
+    margin: 2em 0 1.5em;
+}
 
      .footer-menu {
         display: flex;
         flex-wrap: wrap;
         width: 330px;
         gap: 8px 12px;
-        margin: 1.5em 0;
+        margin: 2em 0;
         font-size: 12px;
         line-height: 2;
     }
@@ -4238,7 +4243,7 @@ footer {
     .ks-family-wrap {
         flex-direction: column;
         gap: 20px;
-        margin: 20px 0;
+        margin: 24px 0;
     }
 
     .ks-family-wrap-left,
@@ -4252,9 +4257,8 @@ footer {
     }
 
    .copy-sns-wrap {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
+        margin-top: 20px;
+        gap: 10px;
     }
 
     .copy-sns-wrap > .sns-list {
