@@ -4210,19 +4210,25 @@ footer {
         width: 120px;
     }
 
-    .footer-menu {
+     .footer-menu {
         display: flex;
         flex-wrap: wrap;
+        width: 330px;
         gap: 8px 12px;
         margin: 1.5em 0;
-        font-size: 11px;
-        line-height: 1.5;
+        font-size: 12px;
+        line-height: 2;
+    }
+
+    .footer-menu > li {
+        white-space: nowrap;
+
     }
 
     .address-wrap {
         flex-direction: column;
         gap: 15px;
-        font-size: 10px;
+        font-size: 11px;
     }
 
     .address-wrap .address-right {
@@ -4238,14 +4244,22 @@ footer {
     .ks-family-wrap-left,
     .ks-family-wrap-right {
         gap: 12px;
-        font-size: 11px;
+        font-size: 12px;
+    }
+     .ks-family-wrap-left img,
+    .ks-family-wrap-right img {
+        width: 40px;
     }
 
-    .copy-sns-wrap {
+   .copy-sns-wrap {
+        display: flex;
         flex-direction: column;
         align-items: flex-start;
-        gap: 15px;
-        margin-top: 35px;
+    }
+
+    .copy-sns-wrap > .sns-list {
+        order: -1;
+        margin-bottom: 15px;
     }
 
 
