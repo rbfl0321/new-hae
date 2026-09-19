@@ -2737,92 +2737,296 @@ footer {
         font-size: 12px;
     }
 
-    .room-type-wrap>div>ul .swiper-slide .text-box {
-        width: calc(100% - 700px);
-        padding: 0 20px 0 80px;
-    }
+   .room-type-wrap{}
 
-    .room-type-wrap>div>ul .swiper-slide .img-box {
-        width: 730px;
-        height: 442px;
-    }
+.room-type-wrap>div{
+    display: none;
+    position: relative;
+}
 
-    .room-type-wrap>div>ul .swiper-slide .text-box>.left {
-    transform: translateY(-10px);
+.room-type-wrap>.on{
+    display: block;
+}
+
+.room-type-wrap>div>ul{}
+
+.room-type-wrap>div>ul .img-box{}
+
+
+.room-type-wrap>div>ul .img-box img{
+    width: 100%;
 }
 
 
- 
+/* ========================================
+   ROOM MAIN TITLE
+======================================== */
 
-    /* 메인 타이틀 */
-    .room-type-wrap>div>ul .text-box>.left .room-main-title {
-        font-size: 36px;
-        margin-bottom: 18px;
-        transform: translateY(-60px);
-    }
+.room-main-title {
+    position: absolute;
+    left: 84px;
+    top: 49px;
+    z-index: 10;
+    margin: 0;
+}
 
-    .room-type-wrap>div>ul .text-box>.left .room-main-title span {
-        font-size: 22px;
-    }
+.room-main-title .title-line {
+    display: flex;
+    flex-direction: column;
+}
 
-    /* 객실명 */
-    .room-type-wrap>div>ul .text-box>.left h3 {
-        font-size: 27px;
-    }
+.room-main-title .title-line span:first-child {
+    display: block;
+    font-size: 26.6px;
+    font-weight: 400;
+    line-height: 1.3;
+    white-space: nowrap;
+}
 
-    /* 설명 */
-    .room-type-wrap>div>ul .text-box>.left h3+p {
-        font-size: 16px;
-        max-width: 400px;
-        height: auto;
-        margin: 1em 0 2em;
-    }
-
-    /* 객실 카테고리 */
-    .room-type-wrap>div>ul .text-box>.left .room-category {
-        font-size: 14px;
-        margin-bottom: 14px;
-    }
-
-    /* 객실 정보 */
-    .room-type-wrap>div>ul .text-box>.right .room-info-list {
-        column-gap: 1.5em;
-        row-gap: 1.2em;
-    }
-
-    .room-type-wrap>div>ul .text-box>.right .room-info-list>div {
-        gap: 6px;
-        font-size: 14px;
-    }
-
-    /* 화살표 크기 */
-    .room-type-wrap .swiper-button-prev,
-    .room-type-wrap .swiper-button-next {
-        width: 45px;
-        height: 44px;
-    }
-
-    .room-type-wrap .swiper-button-prev {
-        left: 42%;
-    }
-
-    /* 인디케이터 */
-    .room-pagination {
-        right: 25px;
-        bottom: 22px;
-        gap: 10px;
-        font-size: 12px;
-    }
-
-    .room-pagination .line {
-        width: 45px;
-    }
+.room-main-title .title-line span:last-child {
+    display: block;
+    font-size: 36.4px;
+    font-weight: 400;
+    line-height: 1.3;
+    white-space: nowrap;
+}
 
 
-.room-type-wrap>div>ul .text-box>.left .room-main-title {
-    min-height: 135px;
-    transform: translateY(0);
-    margin-bottom: 30px;
+/* 기존 sub-title / main-title */
+
+.room-main-title .sub-title {
+    display: block;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.4;
+    white-space: nowrap;
+}
+
+.room-main-title .main-title {
+    display: block;
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 1.3;
+    white-space: nowrap;
+}
+
+
+/* ========================================
+   ROOM TEXT
+======================================== */
+
+.room-type-wrap>div>ul .text-box{
+    display: flex;
+    align-items: center;
+    padding: 0 28px 0 0;
+    gap: 0;
+    box-sizing: border-box;
+}
+
+
+.room-type-wrap>div>ul .text-box>.left{
+    transform: translateY(105px);
+    margin-left: 84px;
+}
+
+
+.room-type-wrap>div>ul .text-box>.left span{}
+
+
+.room-type-wrap>div>ul .text-box>.left h3 {
+    font-size: 23.8px;
+    font-weight: 500;
+    letter-spacing: -0.05em;
+}
+
+
+.room-type-wrap>div>ul .text-box>.left h3+p {
+    font-size: 15.4px;
+    width: 378px;
+    color: var(--Neutral-700);
+    line-height: 1.3;
+    height: 42px;
+    margin: 1.4em 0 2.8em;
+    box-sizing: border-box;
+}
+
+
+.room-type-wrap>div>ul .text-box>.left>div{
+    display: flex;
+    gap: 1.05em;
+}
+
+.room-type-wrap>div>ul .text-box>.left .btn {
+    transform: translateY(-7px);
+}
+
+
+/* ========================================
+   ROOM INFO
+======================================== */
+
+.room-type-wrap>div>ul .text-box>.right .room-info-list{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 2.1em;
+    row-gap: 1.4em;
+}
+
+
+.room-type-wrap>div>ul .text-box>.right .room-info-list>div{
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+
+.room-type-wrap>div>ul .text-box>.left .room-category {
+    font-size: 12.6px;
+    color: var(--Neutral-400);
+    margin-bottom: 14px;
+}
+
+
+/* ========================================
+   SWIPER
+======================================== */
+
+.room-type-wrap>div>ul .swiper-slide{
+    display: flex;
+    align-items: stretch;
+    position: relative;
+}
+
+
+.room-type-wrap>div>ul .swiper-slide .img-box{
+    width: 814.8px;
+    height: 480.2px;
+    order: 2;
+    flex-shrink: 0;
+    margin-left: auto;
+}
+
+
+.room-type-wrap>div>ul .swiper-slide .img-box img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.room-type-wrap>div>ul .swiper-slide .text-box {
+    order: 1;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+/* ========================================
+   ROOM SWIPER ARROW
+======================================== */
+
+.room-type-wrap .swiper-button-prev,
+.room-type-wrap .swiper-button-next {
+    position: absolute;
+    width: 42px;
+    height: 40.6px;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-top: 0;
+    z-index: 1000;
+
+    color: transparent !important;
+    background-color: transparent !important;
+    border: 0 !important;
+    cursor: pointer;
+}
+
+
+/* Swiper 기본 화살표 완전 제거 */
+
+.room-type-wrap .swiper-button-prev::after,
+.room-type-wrap .swiper-button-next::after {
+    content: "" !important;
+    width: 0 !important;
+    height: 0 !important;
+    display: none !important;
+    background: none !important;
+}
+
+
+/* 왼쪽 화살표 */
+
+.room-type-wrap .swiper-button-prev {
+    left: 39.5%;
+
+    background-image: url("../images/icon/left.png") !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-size: contain !important;
+}
+
+
+/* 오른쪽 화살표 */
+
+.room-type-wrap .swiper-button-next {
+    right: 0px;
+
+    background-image: url("../images/icon/right.png") !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    background-size: contain !important;
+}
+
+
+/* ========================================
+   ROOM PAGINATION
+======================================== */
+
+.room-type-hotel.room-type-resort {
+    position: relative;
+}
+
+
+/* 이미지 위에 표시되는 객실 인디케이터 */
+
+.room-pagination {
+    position: absolute;
+    right: 28px;
+    bottom: 21px;
+
+    z-index: 1000;
+
+    display: flex;
+    align-items: center;
+    gap: 9.8px;
+
+    color: #fff;
+    font-size: 9.8px;
+    line-height: 1;
+}
+
+
+.room-pagination .current,
+.room-pagination .total {
+    display: block;
+}
+
+
+.room-pagination .current {
+    font-weight: 500;
+}
+
+
+.room-pagination .total {
+    opacity: 0.6;
+}
+
+
+.room-pagination .line {
+    display: block;
+    width: 42px;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.8);
 }
 
 .dining-list>li .text-box  {
