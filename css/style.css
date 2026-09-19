@@ -5582,9 +5582,9 @@ header.menu-hover .ham-btn img {
 
 .dining-wrap .title-box .dining-title-row .dining-description {
     display: block !important;
-    width: 360px !important;
-    max-width: 360px !important;
-    min-width: 0 !important;
+    width: 400px !important;
+    max-width: 400px !important;
+    min-width: 320px !important;
     white-space: normal !important;
     word-break: keep-all !important;
     font-size: 14px !important;
