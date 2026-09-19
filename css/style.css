@@ -2791,6 +2791,11 @@ footer {
     white-space: nowrap;
 }
 
+.room-type-wrap>div>ul .text-box>.left .btn {
+    transform: translateY(-7px) scale(0.9);
+    transform-origin: left center;
+}
+
 
 /* 기존 sub-title / main-title */
 
@@ -2899,8 +2904,8 @@ footer {
 
 
 .room-type-wrap>div>ul .swiper-slide .img-box{
-    width: 814.8px;
-    height: 480.2px;
+    width: 814px;
+    height: 480px;
     order: 2;
     flex-shrink: 0;
     margin-left: auto;
@@ -2957,7 +2962,7 @@ footer {
 /* 왼쪽 화살표 */
 
 .room-type-wrap .swiper-button-prev {
-    left: 39.5%;
+    left: 39%;
 
     background-image: url("../images/icon/left.png") !important;
     background-repeat: no-repeat !important;
@@ -3485,11 +3490,11 @@ section{
 
 .dining-list>li .text-box h3{
     font-weight: 600;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .dining-list>li .text-box h3+p{
-    font-size: 14px;
+    font-size: 12px;
     margin: 1.3em 0 1.8em;
     color: var(--Neutral-100);
 }
