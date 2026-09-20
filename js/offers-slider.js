@@ -64,6 +64,7 @@ if (offerSliderElement && typeof Swiper !== "undefined") {
             Math.floor(swiper.realIndex / slidesPerGroup) + 1,
             totalPages
         );
+
         const progressPercentage =
             (currentPage / totalPages) * 100;
 
@@ -106,7 +107,6 @@ if (offerSliderElement && typeof Swiper !== "undefined") {
             );
         }
 
-
         const navigationDisabled = swiper.isLocked;
 
         [
@@ -127,24 +127,44 @@ if (offerSliderElement && typeof Swiper !== "undefined") {
     const offerSlider = new Swiper(offerSliderElement, {
         direction: "horizontal",
 
-        speed: 600,
+        speed: 1000,
         loop: true,
         rewind: false,
         watchOverflow: true,
         grabCursor: true,
 
         /*
-         * 360px 이하: 카드 1장
+         * 기본 설정
+         * 360px 초과에서는 기존처럼 auto 유지
          */
-       slidesPerView: "auto",
-       slidesPerGroup: 1,
-       spaceBetween: 20,
-       autoplay: {
-    delay: 1500,
-    disableOnInteraction: false
-},
+        slidesPerView: "auto",
+        slidesPerGroup: 1,
+        spaceBetween: 20,
 
-speed: 1000,
+        /*
+         * 360px 이하에서만 카드 1장
+         */
+        breakpoints: {
+            0: {
+                slidesPerView: 1,
+                slidesPerGroup: 1,
+                spaceBetween: 20
+            },
+
+            361: {
+                slidesPerView: "auto",
+                slidesPerGroup: 1,
+                spaceBetween: 20
+            }
+        },
+
+        /*
+         * 자동 슬라이드
+         */
+        autoplay: {
+            delay: 1500,
+            disableOnInteraction: false
+        },
 
         /*
          * 하단에 보이는 쉐브론 버튼 연결

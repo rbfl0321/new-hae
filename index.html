@@ -1905,8 +1905,11 @@ updateDiningProgress();
 
 <script>
     AOS.init({
-        duration: 1400,
-    });
+    duration: 1400,
+    disable: function () {
+        return window.innerWidth <= 360;
+    }
+});
 </script>
 
 
