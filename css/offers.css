@@ -1,11 +1,12 @@
+/* 변수 선언하기 */
 :root {
     /* color */
-    --Primary-color: #1A5FA1;
-    --Primary-Hover-color: #13578F;
-    --Primary-Pressed-color: #104876;
+    --Primary-color: #005BB2;
+    --Primary-Hover-color: #004e97;
+    --Primary-Pressed-color: #004e97;
     --Primary-Subtle-color: #DCECF8;
 
-    --Neutral-100: #fff;
+    --Neutral-100: #f2f2f2;
     --Neutral-200: #e5e5e5;
     --Neutral-300: #d4d4d4;
     --Neutral-400: #a3a3a3;
@@ -14,383 +15,926 @@
     --Neutral-700: #404040;
     --Neutral-800: #262626;
     --Neutral-900: #171717;
+
+    /* layout */
+    --inner-width: 1440px;
+
+    /* spacing */
+
+    /* border */
+
+    /* transition */
 }
 
-/* hero */
-.offers-hero {
-    position: relative;
-    width: 100%;
-    height: 600px;
-    max-width: none;
-    margin: 0;
-    overflow: hidden;
+/* html {
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
 }
 
-.offers-hero > img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+section {
+    scroll-snap-align: start;
+    scroll-margin-top: 90px;
+} */
+
+
+
+body {
+    
+    font-family: "Pretendard", sans-serif;
+    font-size: 16px;
+    color: #171717;
 }
 
-.offers-hero h1 {
-    position: absolute;
-    top: calc(50% + 44px);
-    left: 50%;
-    transform: translate(-50%, -50%);
 
-    font-family: 'Minion Pro', serif;
-    font-size: 70px;
-    font-weight: 800;
-    line-height: normal;
-    letter-spacing: 0.01em;
-    color: var(--Neutral-100);
-}
-.offers-section {
-    margin-top: 200px;
-}
 
-.offers-container {
-    width: 1440px;
+.inner {
+    max-width: var(--inner-width);
     margin: 0 auto;
+    padding: 0 1em;
 }
 
-.offers-section h2 {
-    margin-bottom: 34px;
 
-    font-family: 'Minion Pro', serif;
-    font-size: 54px;
-    font-weight: 600;
-    line-height: normal;
-    letter-spacing: 0.01em;
+/* PC에서 숨기기 */
+.ham-btn,
+.m-header,
+.m-gnb-list {
+    display: none;
+}
+
+
+/* =========================
+   Header
+========================= */
+
+header {
+    position: fixed;
+    width: 100%;
+     top: 0;
+    left: 0;
+    margin: 0;
+    z-index: 10000;
+}
+
+
+.header-inner {
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    padding: 0 3em;
+    letter-spacing: -0.3px;
+     margin: 0;
+}
+
+
+
+/* Logo */
+
+.logo {
+    transform: translateY(-3px);
+}
+
+.logo img {
+    width: 162px;
+     height: auto;
+}
+
+
+
+
+/* Header 오른쪽 영역 */
+
+.header-inner > div {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+   
+}
+
+header.menu-hover {
+    background: #fff;
+}
+
+header.menu-hover .logo {
+    filter: invert(1);
+}
+
+header.menu-hover .main-menu > li > a {
     color: var(--Neutral-900);
 }
 
-.offers-list {
-    display: grid;
-    grid-template-columns: repeat(2, 708px);
-    column-gap: 24px;
+header.menu-hover .lang-btn > a::before {
+    filter: invert(0);
 }
 
-.offers-card {
-    width: 708px;
+
+/* =========================
+   Main Menu
+========================= */
+
+.main-menu {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    position: relative;
+    letter-spacing: -0.5px;
 }
 
-.offers-card>img {
-    width: 708px;
-    height: 400px;
-    object-fit: cover;
+.main-menu > li > a {
+    display: block;
+    padding: 28px 8px;
+    font-size: 16px;
+    font-weight: 500;
 }
 
-.offers-card h3 {
-    margin-top: 28px;
 
-    font-size: 26px;
-    font-weight: 600;
-    line-height: normal;
-    letter-spacing: 0.01em;
+
+/* 2차 메뉴 */
+
+.main-menu > li:hover .depth2 {
+    display: flex;
+}
+
+.depth2 {
+    display: none;
+    position: absolute;
+    left: 8px;
+    top: 75px;
+    width: 100%;
+    padding: 1.5em 0;
+    background: #fff;
+    line-height: 2;
+}
+
+.depth2 > li {
+    width: 30%;
+}
+
+.depth2 > li > a {
+    display: block;
     color: var(--Neutral-900);
 }
 
-.offers-card>p {
-    margin-top: 20px;
-    min-height: 2lh;
-
-    font-size: 18px;
-    font-weight: 400;
-    line-height: normal;
-    letter-spacing: 0.01em;
-    color: var(--Neutral-900);
+.depth2 > li > a:hover {
+    font-weight: 500;
 }
 
-.offers-more {
-    width: 146px;
-    height: 38px;
-    margin-top: 38px;
-    padding: 6px 12px;
+/* .depth2 > li:nth-child(2) {
+    padding-left: 20px;
+} */
 
+.main-menu > li:nth-child(2) .depth2 > li:nth-child(4) {
+    padding-left: 40px;
+}
+
+.main-menu > li:nth-child(3) .depth2 > li:nth-child(3) {
+    padding-left: 38px;
+}
+
+.main-menu > li:nth-child(3) .depth2 > li:nth-child(4) {
+    padding-left: 50px;
+}
+
+/* 3차 메뉴 */
+
+.depth3 > li > a {
+    color: var(--Neutral-400);
+    font-size: 0.88em;
+     white-space: nowrap;
+}
+
+.depth3 > li > a:hover {
+    color: #171717;
+    font-weight: 500;
+}
+
+.depth2,
+.depth3 {
+    margin: 0;
+    
+    padding: 0;
+    list-style: none;
+}
+
+/* .sub-bg {
+    position: absolute;
+    top: calc(100% - 1px);
+    left: 0;
+    width: 100vw;
+    height: 300px;
+    background: #fff;
+    margin: 0;
+    padding: 0;
+    z-index: -1;
+    display: none;
+}
+
+header.menu-hover .sub-bg {
+    display: block;
+} */
+
+/* =========================
+   GNB
+========================= */
+
+.gnb-list {
+    display: flex;
+    gap: 2em;
+    font-size: 14px;
+}
+
+.gnb-list > li > a {
+    color: #fff;
+}
+
+.gnb-list > li > a:hover {
+    color: #fff;
+    opacity: 0.7;
+}
+
+header.menu-hover .header-right .gnb-list a {
+    color: #171717;
+}
+
+
+
+/* =========================
+   Language
+========================= */
+
+.lang-btn {
+    position: relative;
+}
+
+.lang-btn > a {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.lang-btn > a::before {
+    content: "";
+    display: block;
+    width: 16px;
+    height: 16px;
+    background: url("../images/icon/IconGlobe.svg") no-repeat center / contain;
+}
+
+header.menu-hover .lang-btn > a::before {
+    filter: brightness(0);
+}
+
+header:hover .lang-btn > a::before {
+    /* filter: invert(1); */
+}
+
+
+
+
+
+/* =========================
+   예약하기 버튼
+========================= */
+
+.re-right > button {
+    width: 160px;
+    height: 48px;
     display: flex;
     align-items: center;
     justify-content: center;
+    background: var(--Primary-color);
+    color: #fff;
+    border-radius: 4px;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+}
+
+.re-right > button::before {
+    content: "";
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-right: 6px;
+    background: url("../images/icon/lyra-icon-calendar-check-line.svg") no-repeat center / contain;
+}
+
+.re-right > button {
+    transition: background 0.3s ease;
+}
+
+.re-right > button:hover {
+    background: var(--Primary-Hover-color);
+}
+
+/* =========================
+   서브 메뉴 배경
+========================= */
+
+/* .sub-bg {
+    display: none;
+    position: absolute;
+    top: 77px;
+    width: 100%;
+    height: 300px;
+    background: #fff;
+    
+} */
+
+/* ========================================
+   HERO
+======================================== */
+
+.offers-hero {
+    width: 100%;
+    height: 600px;
+
+    position: relative;
+    overflow: hidden;
+}
+
+.offers-hero-img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+    object-fit: cover;
+}
+
+.offers-hero-dim {
+    position: absolute;
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.offers-hero h2 {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    color: #fff;
+
+    font-family: "Minion Pro", serif;
+
+    font-size: 76px;
+    font-weight: 400;
+
+    line-height: 1;
+    letter-spacing: 0.01em;
+
+    white-space: nowrap;
+}
+
+
+/* ========================================
+   OFFERS
+======================================== */
+
+.offers {
+    width: 100%;
+    max-width: 1440px;
+
+    margin: 0 auto;
+
+    padding-top: 152px;
+    padding-bottom: 160px;
+}
+
+
+/* title */
+
+.offers-title {
+    text-align: center;
+}
+
+.offers-title h2 {
+    color: var(--black);
+
+    font-family: "Minion Pro", serif;
+
+    font-size: 56px;
+    font-weight: 400;
+    line-height: 58px;
+
+    letter-spacing: 0.01em;
+}
+
+.offers-title p {
+    margin-top: 10px;
+
+    color: var(--neutral-800);
+
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 26px;
+}
+
+
+/* ========================================
+   CATEGORY
+======================================== */
+
+.offers-category {
+    margin-top: 116px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 35px;
+}
+
+.offers-category li button {
+    padding: 4px 0;
+
+    border: 0;
+    border-bottom: 2px solid transparent;
+
+    background: transparent;
+
+    color: var(--black);
+
+    font-family: inherit;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 26px;
+
+    cursor: pointer;
+}
+
+.offers-category li.active button {
+    border-bottom-color: var(--black);
+
+    font-weight: 600;
+}
+
+
+/* ========================================
+   OFFER GRID
+======================================== */
+
+.offers-list {
+    margin-top: 76px;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    column-gap: 26px;
+    row-gap: 80px;
+}
+
+
+/* ========================================
+   CARD
+======================================== */
+
+.offer-card {
+    min-width: 0;
+}
+
+.offer-card > a {
+    display: block;
+
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* image */
+
+.offer-img {
+    width: 100%;
+    height: 400px;
+
+    overflow: hidden;
+}
+
+.offer-img img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition: transform 0.5s ease;
+}
+
+.offer-card:hover .offer-img img {
+    transform: scale(1.03);
+}
+
+
+/* info */
+
+.offer-info {
+    position: relative;
+
+    padding-top: 22px;
+
+    min-height: 181px;
+}
+
+
+/* category */
+
+.offer-label {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.offer-category {
+    color: var(--primary);
+
+    font-size: 24px;
+    font-weight: 500;
+
+    line-height: 1.2;
+
+    letter-spacing: -0.02em;
+}
+
+
+/* title */
+
+.offer-info h3 {
+    margin-top: 14px;
+
+    color: var(--black);
+
+    font-size: 30px;
+    font-weight: 500;
+
+    line-height: 1.25;
+
+    letter-spacing: -0.02em;
+}
+
+
+/* description */
+
+.offer-description {
+    margin-top: 14px;
+
+    color: var(--black);
+
+    font-size: 20px;
+    font-weight: 400;
+
+    line-height: 1.45;
+
+    letter-spacing: 0.01em;
+}
+
+
+/* bottom */
+
+.offer-bottom {
+    margin-top: 18px;
+
+    display: flex;
+
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.offer-date {
+    color: var(--neutral-500);
+
+    font-size: 16px;
+    font-weight: 400;
+
+    line-height: 20px;
+
+    letter-spacing: 0.01em;
+
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+
+/* price */
+
+.offer-price {
+    display: flex;
+
+    align-items: center;
     gap: 12px;
 
-    border: 1px solid var(--Primary-color);
+    white-space: nowrap;
+}
+
+.offer-price span {
+    color: var(--neutral-500);
 
     font-size: 14px;
+    font-weight: 400;
+}
+
+.offer-price strong {
+    color: var(--black);
+
+    font-size: 24px;
     font-weight: 500;
-    line-height: normal;
-    letter-spacing: 0;
-    color: var(--Primary-color);
+
+    line-height: 1;
 }
 
-.offers-more-icon {
-    flex-shrink: 0;
-    transition: transform 0.2s ease;
+
+/* ========================================
+   PAGINATION
+======================================== */
+
+.pagination {
+    margin-top: 140px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 14px;
 }
 
-.offers-more:hover .offers-more-icon,
-.offers-more:focus-visible .offers-more-icon {
-    transform: translateX(4px);
+.pagination button {
+    width: 34px;
+    height: 34px;
+
+    padding: 0;
+
+    border: 0;
+
+    background: transparent;
+
+    color: var(--black);
+
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 400;
+
+    cursor: pointer;
 }
 
-.dining-section .offers-list {
-    row-gap: 50px;
+.pagination button.active {
+    color: var(--primary);
+
+    font-weight: 600;
 }
 
-.event-section .offers-list {
-    row-gap: 50px;
-}
 
-.wellness-section {
-    margin-bottom: 200px;
-}
+/* ========================================
+   TABLET
+======================================== */
 
-/* narrow desktop */
-@media screen and (min-width: 1280px) and (max-width: 1440px) {
+@media (max-width: 1279px) {
 
-    .offers-container {
-        width: auto;
-        margin: 0;
+    .header-inner {
         padding-left: 40px;
         padding-right: 40px;
     }
 
-    .offers-list {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        column-gap: 24px;
+    .gnb {
+        margin-left: 30px;
     }
 
-    .offers-card {
-        width: 100%;
+    .gnb > ul {
+        gap: 14px;
     }
 
-    .offers-card>img {
-        width: 100%;
+    .header-util > ul {
+        display: none;
+    }
+
+
+    .offers {
+        width: calc(100% - 80px);
+    }
+
+    .offer-img {
         height: auto;
         aspect-ratio: 708 / 400;
-        object-fit: cover;
     }
+
 }
 
 
-/* tablet */
-@media screen and (max-width: 1279px) {
+/* ========================================
+   MOBILE / TABLET
+======================================== */
+
+@media (max-width: 1023px) {
+
+    .header {
+        height: 64px;
+    }
+
+    .header-inner {
+        padding: 15px 30px;
+        align-items: center;
+    }
+
+    .logo {
+        width: 145px;
+        margin-top: 0;
+    }
+
+    .gnb,
+    .header-util {
+        display: none;
+    }
+
 
     /* hero */
+
     .offers-hero {
-        height: 500px;
+        height: 480px;
     }
 
-    .offers-hero h1 {
-        top: calc(50% + 30px);
-        font-size: 54px;
+    .offers-hero h2 {
+        font-size: 58px;
     }
 
 
-    /* offers package */
-    .offers-container {
-        width: auto;
-        margin: 0;
+    /* offers */
 
-        padding-left: 32px;
-        padding-right: 32px;
+    .offers {
+        width: calc(100% - 60px);
+
+        padding-top: 110px;
+        padding-bottom: 120px;
     }
 
-    .offers-section {
-        margin-top: 120px;
+    .offers-title h2 {
+        font-size: 48px;
     }
 
-    .wellness-section {
-        margin-bottom: 120px;
+    .offers-title p {
+        font-size: 18px;
     }
+
+
+    .offers-category {
+        margin-top: 80px;
+
+        overflow-x: auto;
+
+        gap: 28px;
+    }
+
 
     .offers-list {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        column-gap: 24px;
+        margin-top: 60px;
+
+        column-gap: 20px;
+        row-gap: 65px;
     }
 
-    .offers-card {
-        width: 100%;
+    .offer-category {
+        font-size: 19px;
     }
 
-    .offers-card>img {
-        width: 100%;
-        height: auto;
-
-        aspect-ratio: 708 / 400;
-
-        object-fit: cover;
+    .offer-info h3 {
+        font-size: 24px;
     }
 
-    /* event */
-    .event-section .offers-list {
-        grid-template-columns: 1fr;
-        row-gap: 50px;
+    .offer-description {
+        font-size: 17px;
     }
 
-    /* wellness */
-    .wellness-section .offers-list {
-        grid-template-columns: 1fr;
-    }
-
-    /* typo */
-    .offers-section h2 {
-        font-size: 46px;
-    }
-
-    .offers-card h3 {
-        font-size: 22px;
-    }
-
-    .offers-card>p {
-        font-size: 16px;
+    .offer-price strong {
+        font-size: 20px;
     }
 
 }
 
-/* mobile */
-@media screen and (max-width: 767px) {
 
-   
-    .offers-container {
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 767px) {
+
+    .header-inner {
         padding-left: 20px;
         padding-right: 20px;
     }
 
-    /* Hotel / Resort : 데스크톱처럼 2열 유지 */
-    .hotel-section .offers-list,
-    .resort-section .offers-list {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        column-gap: 16px;
-        row-gap: 0;
+
+    .offers-hero {
+        height: 360px;
     }
 
-    .offers-list {
-        column-gap: 16px;
-        row-gap: 48px;
+    .offers-hero h2 {
+        font-size: clamp(38px, 10vw, 50px);
     }
 
-    .offers-section {
-        margin-top: 88px;
+
+    .offers {
+        width: calc(100% - 40px);
+
+        padding-top: 80px;
+        padding-bottom: 100px;
     }
 
-    .offers-hero+.offers-section {
-        margin-top: 50px;
+
+    .offers-title h2 {
+        font-size: 40px;
+        line-height: 1;
     }
 
-    .wellness-section {
-        margin-bottom: 88px;
-    }
+    .offers-title p {
+        margin-top: 14px;
 
-    .offers-card {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .offers-card>p {
-        margin-bottom: 28px;
-    }
-
-    .offers-more {
-        margin-top: auto;
-    }
-
-    /* 설명의 길이에 따른 간격 조정 */
-    .event-section .offers-card>p,
-    .wellness-section .offers-card>p {
-        min-height: auto;
-        margin-top: 12px;
-        margin-bottom: 28px;
-    }
-
-    .event-section .offers-more,
-    .wellness-section .offers-more {
-        margin-top: 0;
-    }
-
-   
-
-    /* typo */
-    .offers-section h2 {
-        margin-bottom: 28px;
-        font-size: 38px;
-    }
-
-    /* 모든 섹션 카드 제목 크기 통일 */
-    .offers-card h3 {
-        margin-top: 16px;
         font-size: 16px;
     }
 
-    .offers-card p {
-        font-size: 13px;
+
+    /* category */
+
+    .offers-category {
+        margin-top: 60px;
+
+        gap: 24px;
     }
 
-    .hotel-section .offers-card>p,
-    .resort-section .offers-card>p {
-        margin-top: 8px;
-        min-height: 21px;
+    .offers-category li {
+        flex-shrink: 0;
     }
 
-    .dining-section .offers-card>p {
-        /* 최대 3줄로 */
-        display: -webkit-box;
-        -webkit-box-orient: vertical;
-        -webkit-line-clamp: 3;
-
-        line-clamp: 3;
-
-        overflow: hidden;
-
-        /* 기본 높이 */
-        min-height: 31px;
-
-        margin-top: 12px;
+    .offers-category li button {
+        font-size: 18px;
     }
 
-    /* hero */
-    .offers-hero {
-        height: 200px;
+
+    /* 1 column */
+
+    .offers-list {
+        margin-top: 45px;
+
+        grid-template-columns: 1fr;
+
+        row-gap: 65px;
     }
 
-    .offers-hero h1 {
-        top: calc(50% + 35px);
-        font-size: 49px;
-        font-weight: 700;
-    }
-}
 
-
-/* small ver. mobile */
-@media screen and (max-width: 480px) {
-
-
-    .offers-container {
-        padding-left: 16px;
-        padding-right: 16px;
+    .offer-img {
+        aspect-ratio: 1.77 / 1;
     }
 
-    .offers-section {
-        margin-top: 72px;
+
+    .offer-info {
+        padding-top: 18px;
     }
 
-    .wellness-section {
-        margin-bottom: 72px;
+    .offer-category {
+        font-size: 18px;
     }
 
-    .offers-section h2 {
-        font-size: clamp(28px, calc(16px + 3.333vw), 32px);
+    .offer-info h3 {
+        margin-top: 10px;
+
+        font-size: 22px;
     }
 
-    /* 2열로 표시되는 카드만 타이틀 두 줄 높이 확보 */
-    .hotel-section .offers-card h3,
-    .resort-section .offers-card h3 {
-        line-height: 1.35;
-        min-height: 2.7em;
+    .offer-description {
+        margin-top: 10px;
+
+        font-size: 16px;
     }
 
-    .offers-more {
-        width: min(146px, 100%);
+
+    .offer-bottom {
+        margin-top: 18px;
+    }
+
+    .offer-date {
+        font-size: 14px;
+    }
+
+    .offer-price {
+        gap: 8px;
+    }
+
+    .offer-price span {
+        font-size: 12px;
+    }
+
+    .offer-price strong {
+        font-size: 18px;
+    }
+
+
+    /* pagination */
+
+    .pagination {
+        margin-top: 90px;
+
+        gap: 5px;
     }
 
 }
